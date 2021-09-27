@@ -30,6 +30,20 @@ public class Person {
         this.passportId = passportId;
     }
 
+    public static void main(String[] args) {
+        Person first = new Person();
+        first.setFirstName("Jane");
+        first.setLastName("Austen");
+        first.setPassportId(234567);
+
+        Person second = new Person();
+        second.setFirstName("Stephen");
+        second.setLastName("King");
+        second.setPassportId(456787);
+
+        System.out.println("First human: " + first.getFirstName() + " " + first.getLastName() + "   " + "Passport: " + first.getPassportId());
+        System.out.println("Second human: " + second.getFirstName() + " " + second.getLastName() + "   " + "Passport: " + second.getPassportId());
+    }
 }
 
 
