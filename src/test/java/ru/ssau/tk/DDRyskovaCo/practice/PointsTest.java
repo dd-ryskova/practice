@@ -20,7 +20,9 @@ public class PointsTest {
     Point multiplyPoint = multiply(firstPoint, secondPoint);
     Point dividePoint = divide(firstPoint, secondPoint);
     Point enlargePoint = enlarge(secondPoint, 2.4);
-    double length = length(thirdPoint);
+    Point oppositePoint = opposite(firstPoint);
+    Point inversePoint = inverse(thirdPoint);
+
 
     @Test
     public void testsSum() {
@@ -60,6 +62,20 @@ public class PointsTest {
     @Test
     public void testLength() {
         assertEquals(thirdPoint.length(), 3.0, DELTA);
+    }
+
+    @Test
+    public void testOpposite() {
+        assertEquals(oppositePoint.getX(), -2.0, DELTA);
+        assertEquals(oppositePoint.getY(), -4.0, DELTA);
+        assertEquals(oppositePoint.getZ(), -6.0, DELTA);
+    }
+
+    @Test
+    public void testInverse() {
+        assertEquals(inversePoint.getX(), 0.5, DELTA);
+        assertEquals(inversePoint.getY(), 0.5, DELTA);
+        assertEquals(inversePoint.getZ(), 1, DELTA);
     }
 
     @AfterMethod
