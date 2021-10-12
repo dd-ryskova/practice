@@ -18,6 +18,7 @@ public class PointsTest {
     Point subtractPoint = subtract(firstPoint, secondPoint);
     Point multiplyPoint = multiply(firstPoint, secondPoint);
     Point dividePoint = divide(firstPoint, secondPoint);
+    Point enlargePoint = enlarge(secondPoint, 2.4);
 
     @Test
     public void testsSum() {
@@ -46,6 +47,14 @@ public class PointsTest {
         assertEquals(dividePoint.getY(), 2.0, DELTA);
         assertEquals(dividePoint.getZ(), 2.0, DELTA);
     }
+
+    @Test
+    public void testEnlarge() {
+        assertEquals(enlargePoint.getX(), 2.4, DELTA);
+        assertEquals(enlargePoint.getY(), 4.8, DELTA);
+        assertEquals(enlargePoint.getZ(), 7.2, DELTA);
+    }
+
 
     @AfterMethod
     void afterMethod() {
