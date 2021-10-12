@@ -23,6 +23,10 @@ public class Point {
         return z;
     }
 
+    public double length() {
+        return Math.sqrt(x * x + y * y + z * z);
+    }
+
     @Override
     public String toString() {
         return "(" + this.x + ", " + this.y + ", " + this.z + ")";

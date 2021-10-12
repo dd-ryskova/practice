@@ -24,4 +24,8 @@ public class Points {
     public static Point enlarge(Point first, double x) {
         return new Point(first.getX() * x, first.getY() * x, first.getZ() * x);
     }
+
+    public static double length(Point first) {
+        return first.length();
+    }
 }

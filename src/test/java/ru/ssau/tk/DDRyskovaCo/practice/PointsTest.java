@@ -13,12 +13,14 @@ public class PointsTest {
 
     Point firstPoint = new Point(2, 4, 6);
     Point secondPoint = new Point(1, 2, 3);
+    Point thirdPoint = new Point(2, 2, 1);
 
     Point sumPoint = sum(firstPoint, secondPoint);
     Point subtractPoint = subtract(firstPoint, secondPoint);
     Point multiplyPoint = multiply(firstPoint, secondPoint);
     Point dividePoint = divide(firstPoint, secondPoint);
     Point enlargePoint = enlarge(secondPoint, 2.4);
+    double length = length(thirdPoint);
 
     @Test
     public void testsSum() {
@@ -55,6 +57,10 @@ public class PointsTest {
         assertEquals(enlargePoint.getZ(), 7.2, DELTA);
     }
 
+    @Test
+    public void testLength() {
+        assertEquals(thirdPoint.length(), 3.0, DELTA);
+    }
 
     @AfterMethod
     void afterMethod() {
