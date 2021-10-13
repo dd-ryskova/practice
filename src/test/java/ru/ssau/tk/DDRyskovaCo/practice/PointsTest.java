@@ -22,6 +22,7 @@ public class PointsTest {
     Point enlargePoint = enlarge(secondPoint, 2.4);
     Point oppositePoint = opposite(firstPoint);
     Point inversePoint = inverse(thirdPoint);
+    Point vectorPoint = vectorProduct(firstPoint, thirdPoint);
 
 
     @Test
@@ -76,6 +77,18 @@ public class PointsTest {
         assertEquals(inversePoint.getX(), 0.5, DELTA);
         assertEquals(inversePoint.getY(), 0.5, DELTA);
         assertEquals(inversePoint.getZ(), 1, DELTA);
+    }
+
+    @Test
+    public void testScalarProduct() {
+        assertEquals(scalarProduct(firstPoint, secondPoint), 28, DELTA);
+    }
+
+    @Test
+    public void testVectorProduct() {
+        assertEquals(vectorPoint.getX(), -8.0, DELTA);
+        assertEquals(vectorPoint.getY(), 10.0, DELTA);
+        assertEquals(vectorPoint.getZ(), -4.0, DELTA);
     }
 
     @AfterMethod
