@@ -24,71 +24,64 @@ public class PointsTest {
     Point inversePoint = inverse(thirdPoint);
     Point vectorPoint = vectorProduct(firstPoint, thirdPoint);
 
-
     @Test
     public void testsSum() {
-        assertEquals(sumPoint.getX(), 3.0, DELTA);
-        assertEquals(sumPoint.getY(), 6.0, DELTA);
-        assertEquals(sumPoint.getZ(), 9.0, DELTA);
+        assertTrue(equalsApproximately(sumPoint, new Point(3.0, 6.0, 9.0)));
+        assertTrue(equalsApproximately(Points.sum(new Point(-2.0, 3.5, -14.7), new Point(-12.0, -0.5, 24.6)), new Point(-14.0, 3.0, 9.9)));
     }
 
     @Test
     public void testSubtract() {
-        assertEquals(subtractPoint.getX(), 1.0, DELTA);
-        assertEquals(subtractPoint.getY(), 2.0, DELTA);
-        assertEquals(subtractPoint.getZ(), 3.0, DELTA);
+        assertTrue(equalsApproximately(subtractPoint, new Point(1.0, 2.0, 3.0)));
+        assertTrue(equalsApproximately(Points.subtract(new Point(-12.7, 6.54, 38.2), new Point(-1.0, 26.5, 13.0)), new Point(-11.7, -19.96, 25.2)));
     }
 
     @Test
     public void testMultiply() {
-        assertEquals(multiplyPoint.getX(), 2.0, DELTA);
-        assertEquals(multiplyPoint.getY(), 8.0, DELTA);
-        assertEquals(multiplyPoint.getZ(), 18.0, DELTA);
+        assertTrue(equalsApproximately(multiplyPoint, new Point(2.0, 8.0, 18.0)));
+        assertTrue(equalsApproximately(Points.multiply(new Point(12.0, 0.2, -6.1), new Point(1.0, -10.0, 3.0)), new Point(12, -2, -18.3)));
     }
 
     @Test
     public void testDivide() {
-        assertEquals(dividePoint.getX(), 2.0, DELTA);
-        assertEquals(dividePoint.getY(), 2.0, DELTA);
-        assertEquals(dividePoint.getZ(), 2.0, DELTA);
+        assertTrue(equalsApproximately(dividePoint, new Point(2.0, 2.0, 2.0)));
+        assertTrue(equalsApproximately(Points.divide(new Point(12.0, -44.10, 36.3), new Point(-2, -4, -3)), new Point(-6, 11.025, -12.1)));
     }
 
     @Test
     public void testEnlarge() {
-        assertEquals(enlargePoint.getX(), 2.4, DELTA);
-        assertEquals(enlargePoint.getY(), 4.8, DELTA);
-        assertEquals(enlargePoint.getZ(), 7.2, DELTA);
+        assertTrue(equalsApproximately(enlargePoint, new Point(2.4, 4.8, 7.2)));
+        assertTrue(equalsApproximately(Points.enlarge(new Point(-1.0, 8.9, -3.5), 2), new Point(-2, 17.8, -7)));
     }
 
     @Test
     public void testLength() {
         assertEquals(thirdPoint.length(), 3.0, DELTA);
+        assertEquals((Points.length(new Point(-3, 2, 1))), Math.sqrt(14), DELTA);
     }
 
     @Test
     public void testOpposite() {
-        assertEquals(oppositePoint.getX(), -2.0, DELTA);
-        assertEquals(oppositePoint.getY(), -4.0, DELTA);
-        assertEquals(oppositePoint.getZ(), -6.0, DELTA);
+        assertTrue(Points.equalsApproximately(oppositePoint, new Point(-2.0, -4.0, -6.0)));
+        assertTrue(Points.equalsApproximately(Points.opposite(new Point(-45.3, 11.21, 0)), new Point(45.3, -11.21, 0)));
     }
 
     @Test
     public void testInverse() {
-        assertEquals(inversePoint.getX(), 0.5, DELTA);
-        assertEquals(inversePoint.getY(), 0.5, DELTA);
-        assertEquals(inversePoint.getZ(), 1, DELTA);
+        assertTrue(equalsApproximately(inversePoint, new Point(0.5, 0.5, 1)));
+        assertTrue(equalsApproximately(Points.inverse(new Point(8, 5, -4)), new Point(0.125, 0.2, -0.25)));
     }
 
     @Test
     public void testScalarProduct() {
         assertEquals(scalarProduct(firstPoint, secondPoint), 28, DELTA);
+        assertEquals(Points.scalarProduct(new Point(2.0, 0.5, 3.0), new Point(-5.5, 2.0, 3.0)), -1, DELTA);
     }
 
     @Test
     public void testVectorProduct() {
-        assertEquals(vectorPoint.getX(), -8.0, DELTA);
-        assertEquals(vectorPoint.getY(), 10.0, DELTA);
-        assertEquals(vectorPoint.getZ(), -4.0, DELTA);
+        assertTrue(Points.equalsApproximately(vectorPoint, new Point(-8.0, 10.0, -4.0)));
+        assertTrue(Points.equalsApproximately(Points.vectorProduct(new Point(0.0, 1.0, 2.0), new Point(-1.5, 2.5, -3.5)), new Point(-8.5, -3, 1.5)));
     }
 
     @AfterMethod
