@@ -14,7 +14,7 @@ public class PersonTest {
     Person fifth = new Person("Darya", "Ryskova");
     Person sixth = new Person(873467);
     Person seventh = new Person();
-    Person eighth = new Person("Darya", "Ryskova", 123212, Gender.MALE);
+    Person eighth = new Person("Darya", "Ryskova", 123212, Gender.FEMALE);
 
 
     @Test
@@ -73,13 +73,13 @@ public class PersonTest {
         assertEquals(eighth.getFirstName(), "Darya");
         assertEquals(eighth.getLastName(), "Ryskova");
         assertEquals(eighth.getPassportId(), 123212);
-        assertEquals(eighth.getGender(), Gender.MALE);
+        assertEquals(eighth.getGender(), Gender.FEMALE);
     }
 
     @Test
     public void testSetGender() {
-        fourth.setGender(Gender.FEMALE);
-        assertEquals(fourth.getGender(), Gender.FEMALE);
+        fourth.setGender(Gender.MALE);
+        assertEquals(fourth.getGender(), Gender.MALE);
     }
 
 
