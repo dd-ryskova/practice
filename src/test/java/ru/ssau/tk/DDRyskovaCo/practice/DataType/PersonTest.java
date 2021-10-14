@@ -1,4 +1,4 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.DataType;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;

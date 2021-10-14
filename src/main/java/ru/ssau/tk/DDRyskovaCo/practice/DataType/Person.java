@@ -1,4 +1,4 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.DataType;
 
 public class Person {
 
@@ -10,28 +10,24 @@ public class Person {
         this.firstName = "";
         this.lastName = "";
         this.passportId = 0;
-        System.out.println("First constructor");
     }
 
     public Person(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.passportId = 0;
-        System.out.println("Second constructor");
     }
 
     public Person(int passportId) {
         this.firstName = "";
         this.lastName = "";
         this.passportId = passportId;
-        System.out.println("Third constructor");
     }
 
     public Person(String firstName, String lastName, int passportId) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.passportId = passportId;
-        System.out.println("Fourth constructor");
     }
 
     public String getFirstName() {

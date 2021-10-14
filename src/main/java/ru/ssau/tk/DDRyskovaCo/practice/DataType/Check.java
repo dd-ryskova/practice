@@ -1,6 +1,7 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.DataType;
 
 public class Check {
+
     public static void main(String[] args) {
         Person person = new Person();
         person.setFirstName("Arkadiy");                       //Создаём первый объект с именем Arkadiy

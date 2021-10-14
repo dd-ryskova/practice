@@ -1,4 +1,4 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.DataType;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -26,6 +26,12 @@ public class NamedPointTest {
         assertEquals(firstPoint.getName(), "X");
         assertEquals(secondPoint.getName(), "Y");
         assertEquals(thirdPoint.getName(), "O");
+    }
+
+    @Test
+    public void testReset() {
+        firstPoint.reset();
+        assertEquals(firstPoint.getName(), "Absent");
     }
 
     @AfterMethod

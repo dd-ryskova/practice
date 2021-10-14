@@ -1,7 +1,9 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.DataType;
 
 public class MainPerson {
+
     public static void main(String[] args) {
+
         Person first = new Person("Jane", "Austen", 234567);
         Person second = new Person("Stephen", "King");
         Person third = new Person(349812);

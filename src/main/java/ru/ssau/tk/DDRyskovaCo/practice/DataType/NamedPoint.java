@@ -1,6 +1,6 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.DataType;
 
-public class NamedPoint extends Point {
+public class NamedPoint extends Point implements Resettable {
 
     private String name;
 
@@ -23,5 +23,10 @@ public class NamedPoint extends Point {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public void reset() {
+        this.name = "Absent";
     }
 }

@@ -1,9 +1,9 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.DataType;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
-import static ru.ssau.tk.DDRyskovaCo.practice.Points.*;
+import static ru.ssau.tk.DDRyskovaCo.practice.DataType.Points.*;
 
 import static org.testng.Assert.*;
 
