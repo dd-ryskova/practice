@@ -14,6 +14,8 @@ public class PersonTest {
     Person fifth = new Person("Darya", "Ryskova");
     Person sixth = new Person(873467);
     Person seventh = new Person();
+    Person eighth = new Person("Darya", "Ryskova", 123212, Gender.MALE);
+
 
     @Test
     public void testFirstHuman() {
@@ -65,6 +67,21 @@ public class PersonTest {
     public void testOfFourthConstructor() {
         assertEquals(sixth.getPassportId(), 873467);
     }
+
+    @Test
+    public void testOfFifthConstructor() {
+        assertEquals(eighth.getFirstName(), "Darya");
+        assertEquals(eighth.getLastName(), "Ryskova");
+        assertEquals(eighth.getPassportId(), 123212);
+        assertEquals(eighth.getGender(), Gender.MALE);
+    }
+
+    @Test
+    public void testSetGender() {
+        fourth.setGender(Gender.FEMALE);
+        assertEquals(fourth.getGender(), Gender.FEMALE);
+    }
+
 
     @AfterMethod
     void afterMethod() {
