@@ -17,6 +17,8 @@ public class ArrayTest {
     int[] sixthArray = createOddFilledArray(3);
     int[] seventhArray = createEvenFilledArray(5);
 
+    int[] eighthArray = createFibonacciFilledArray(14);
+
     @Test
     public void testCreateArray() {
         assertEquals(firstArray.length, 14);
@@ -48,5 +50,14 @@ public class ArrayTest {
         assertEquals(seventhArray[2], 6);
         assertEquals(seventhArray[3], 4);
         assertEquals(seventhArray[4], 2);
+    }
+
+    @Test
+    public void testCreateFibonacciFilledArray() {
+        assertEquals(eighthArray[3], 2);
+        assertEquals(eighthArray[7], 13);
+        assertEquals(eighthArray[10], 55);
+        assertEquals(eighthArray[12], 144);
+        assertEquals(eighthArray[13], 233);
     }
 }
