@@ -15,7 +15,7 @@ public class ArrayTest {
     int[] fifthArray = createFilledArray(5);
 
     int[] sixthArray = createOddFilledArray(3);
-    int[] seventhArray = createOddFilledArray(5);
+    int[] seventhArray = createEvenFilledArray(5);
 
     @Test
     public void testCreateArray() {
@@ -39,5 +39,14 @@ public class ArrayTest {
         assertEquals(sixthArray[0], 1);
         assertEquals(sixthArray[1], 3);
         assertEquals(sixthArray[2], 5);
+    }
+
+    @Test
+    public void testCreateEvenFilledArray() {
+        assertEquals(seventhArray[0], 10);
+        assertEquals(seventhArray[1], 8);
+        assertEquals(seventhArray[2], 6);
+        assertEquals(seventhArray[3], 4);
+        assertEquals(seventhArray[4], 2);
     }
 }
