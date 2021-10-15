@@ -3,8 +3,7 @@ package ru.ssau.tk.DDRyskovaCo.practice.Array;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
-import static ru.ssau.tk.DDRyskovaCo.practice.Array.Array.createArray;
-import static ru.ssau.tk.DDRyskovaCo.practice.Array.Array.createFilledArray;
+import static ru.ssau.tk.DDRyskovaCo.practice.Array.Array.*;
 
 public class ArrayTest {
 
@@ -14,6 +13,9 @@ public class ArrayTest {
 
     int[] fourthArray = createFilledArray(14);
     int[] fifthArray = createFilledArray(5);
+
+    int[] sixthArray = createOddFilledArray(3);
+    int[] seventhArray = createOddFilledArray(5);
 
     @Test
     public void testCreateArray() {
@@ -30,5 +32,12 @@ public class ArrayTest {
         assertEquals(fifthArray[0], 2);
         assertEquals(fifthArray[4], 2);
         assertEquals(fifthArray[3], 1);
+    }
+
+    @Test
+    public void testCreateOddFilledArray() {
+        assertEquals(sixthArray[0], 1);
+        assertEquals(sixthArray[1], 3);
+        assertEquals(sixthArray[2], 5);
     }
 }
