@@ -1,5 +1,6 @@
 package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks10;
 
+import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
 
 public class Array {
@@ -81,8 +82,16 @@ public class Array {
 
     public static double[] createArrayOfArithmeticProgression(int size, double a, double d) {
         double[] array = new double[size];
-        for (int i = 1; i <= size; ++i) {
-            array[i - 1] = a + d * (i - 1);
+        for (int i = 0; i < size; ++i) {
+            array[i] = a + d * (i);
+        }
+        return array;
+    }
+
+    public static double[] createArrayOfGeometricProgression(int size, double b, double q) {
+        double[] array = new double[size];
+        for (int i = 0; i < size; ++i) {
+            array[i] = b * pow(q, i);
         }
         return array;
     }

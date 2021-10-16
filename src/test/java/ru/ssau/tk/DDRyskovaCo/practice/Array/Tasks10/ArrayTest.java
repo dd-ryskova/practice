@@ -26,6 +26,7 @@ public class ArrayTest {
 
     public int[] thirteenthArray = createWithoutThreeArray(7);
     public double[] fourteenthArray = createArrayOfArithmeticProgression(5, 0, 2);
+    public double[] fifteenthArray = createArrayOfGeometricProgression(5, 8, 0.5);
 
     @Test
     public void testCreateArray() {
@@ -106,5 +107,14 @@ public class ArrayTest {
         assertEquals(fourteenthArray[2], 4.0);
         assertEquals(fourteenthArray[3], 6.0);
         assertEquals(fourteenthArray[4], 8.0);
+    }
+
+    @Test
+    public void testCreateArrayOfGeometricProgression() {
+        assertEquals(fifteenthArray[0], 8.0);
+        assertEquals(fifteenthArray[1], 4.0);
+        assertEquals(fifteenthArray[2], 2.0);
+        assertEquals(fifteenthArray[3], 1.0);
+        assertEquals(fifteenthArray[4], 0.5);
     }
 }
