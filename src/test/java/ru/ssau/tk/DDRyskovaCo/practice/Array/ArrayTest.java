@@ -7,17 +7,18 @@ import static ru.ssau.tk.DDRyskovaCo.practice.Array.Array.*;
 
 public class ArrayTest {
 
-    int[] firstArray = createArray(14);
-    int[] secondArray = createArray(5);
-    int[] thirdArray = createArray(0);
+    public int[] firstArray = createArray(14);
+    public int[] secondArray = createArray(5);
+    public int[] thirdArray = createArray(0);
 
-    int[] fourthArray = createFilledArray(14);
-    int[] fifthArray = createFilledArray(5);
+    public int[] fourthArray = createFilledArray(14);
+    public int[] fifthArray = createFilledArray(5);
 
-    int[] sixthArray = createOddFilledArray(3);
-    int[] seventhArray = createEvenFilledArray(5);
+    public int[] sixthArray = createOddFilledArray(3);
+    public int[] seventhArray = createEvenFilledArray(5);
 
-    int[] eighthArray = createFibonacciFilledArray(14);
+    public int[] eighthArray = createFibonacciFilledArray(14);
+    public int[] ninthArray = createSqrArray(20);
 
     @Test
     public void testCreateArray() {
@@ -59,5 +60,14 @@ public class ArrayTest {
         assertEquals(eighthArray[10], 55);
         assertEquals(eighthArray[12], 144);
         assertEquals(eighthArray[13], 233);
+    }
+
+    @Test
+    public void testCreateSqrArray() {
+        assertEquals(ninthArray[0], 0);
+        assertEquals(ninthArray[7], 49);
+        assertEquals(ninthArray[10], 100);
+        assertEquals(ninthArray[15], 225);
+        assertEquals(ninthArray[19], 361);
     }
 }
