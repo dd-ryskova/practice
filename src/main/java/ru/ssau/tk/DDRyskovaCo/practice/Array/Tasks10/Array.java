@@ -78,4 +78,12 @@ public class Array {
         }
         return array;
     }
+
+    public static double[] createArrayOfArithmeticProgression(int size, double a, double d) {
+        double[] array = new double[size];
+        for (int i = 1; i <= size; ++i) {
+            array[i - 1] = a + d * (i - 1);
+        }
+        return array;
+    }
 }
