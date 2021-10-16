@@ -20,6 +20,11 @@ public class ArrayTest {
     public int[] eighthArray = createFibonacciFilledArray(14);
     public int[] ninthArray = createSqrArray(20);
 
+    public double[] tenthArray = createEquationArray(1, 2, 1);
+    public double[] eleventhArray = createEquationArray(3, -2, 1);
+    public double[] twelfthArray = createEquationArray(-1, -7, 8);
+
+
     @Test
     public void testCreateArray() {
         assertEquals(firstArray.length, 14);
@@ -69,5 +74,15 @@ public class ArrayTest {
         assertEquals(ninthArray[10], 100);
         assertEquals(ninthArray[15], 225);
         assertEquals(ninthArray[19], 361);
+    }
+
+    @Test
+    public void testCreateEquationArray() {
+        assertEquals(tenthArray.length, 1);
+        assertEquals(eleventhArray.length, 0);
+        assertEquals(twelfthArray.length, 2);
+        assertEquals(tenthArray[0], -1.0);
+        assertEquals(twelfthArray[0], -8.0);
+        assertEquals(twelfthArray[1], 1.0);
     }
 }
