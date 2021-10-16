@@ -1,4 +1,4 @@
-package ru.ssau.tk.DDRyskovaCo.practice.Array;
+package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks10;
 
 import static java.lang.Math.sqrt;
 
@@ -64,5 +64,18 @@ public class Array {
         } else {
             return new double[0];
         }
+    }
+
+    public static int[] createWithoutThreeArray(int size) {
+        int[] array = new int[size];
+        int counter = 0;
+        for (int i = 0; array[size - 1] == 0; i++) {
+            if (i % 3 == 0) {
+                counter++;
+                continue;
+            }
+            array[i - counter] = i;
+        }
+        return array;
     }
 }

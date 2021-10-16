@@ -1,9 +1,9 @@
-package ru.ssau.tk.DDRyskovaCo.practice.Array;
+package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks10;
 
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
-import static ru.ssau.tk.DDRyskovaCo.practice.Array.Array.*;
+import static ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks10.Array.*;
 
 public class ArrayTest {
 
@@ -24,6 +24,7 @@ public class ArrayTest {
     public double[] eleventhArray = createEquationArray(3, -2, 1);
     public double[] twelfthArray = createEquationArray(-1, -7, 8);
 
+    public int[] thirteenthArray = createWithoutThreeArray(7);
 
     @Test
     public void testCreateArray() {
@@ -84,5 +85,16 @@ public class ArrayTest {
         assertEquals(tenthArray[0], -1.0);
         assertEquals(twelfthArray[0], -8.0);
         assertEquals(twelfthArray[1], 1.0);
+    }
+
+    @Test
+    public void testCreateWithoutThreeArray() {
+        assertEquals(thirteenthArray[0], 1);
+        assertEquals(thirteenthArray[1], 2);
+        assertEquals(thirteenthArray[2], 4);
+        assertEquals(thirteenthArray[3], 5);
+        assertEquals(thirteenthArray[4], 7);
+        assertEquals(thirteenthArray[5], 8);
+        assertEquals(thirteenthArray[6], 10);
     }
 }
