@@ -61,7 +61,13 @@ public class SecondArrayTest {
 
     @Test
     public void testCreateMaxArray() {
-        assertEquals(createMaxArray(firstArray),5.);
+        assertEquals(createMaxArray(firstArray), 5.);
         assertEquals(createMaxArray(secondArray), 4.);
+    }
+
+    @Test
+    public void testCreateSumArray() {
+        assertEquals(createSumArray(firstArray), 6.);
+        assertEquals(createSumArray(thirdArray), 10.);
     }
 }

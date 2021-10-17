@@ -1,7 +1,5 @@
 package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks20;
 
-import static java.lang.Math.pow;
-
 public class SecondArray {
 
     public static double[] createArrayOfDivisors(int x) {
@@ -78,5 +76,15 @@ public class SecondArray {
             }
         }
         return max;
+    }
+
+    public static double createSumArray(double[] array) {
+        double sum = 0;
+        for (int i = 0; i < array.length; ++i) {
+            if (i % 2 == 0) {
+                sum += array[i];
+            }
+        }
+        return sum;
     }
 }
