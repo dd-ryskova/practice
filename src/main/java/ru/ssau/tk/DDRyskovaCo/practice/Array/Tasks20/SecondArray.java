@@ -21,8 +21,8 @@ public class SecondArray {
         return array;
     }
 
-    public static int[] createSymmetricArray(int size) {
-        int[] array = new int[size];
+    public static double[] createSymmetricArray(int size) {
+        double[] array = new double[size];
         int index;
         if (size % 2 != 0) {
             index = (size / 2) + 1;
@@ -34,5 +34,11 @@ public class SecondArray {
             array[size - i] = i;
         }
         return array;
+    }
+
+    public static void createReverseArray(double[] array) {
+        for (int i = 0; i < array.length; ++i) {
+            array[i] = array[i] * (-1);
+        }
     }
 }

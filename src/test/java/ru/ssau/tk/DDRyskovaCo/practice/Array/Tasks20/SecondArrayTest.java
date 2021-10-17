@@ -11,8 +11,8 @@ import static ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks20.SecondArray.*;
 public class SecondArrayTest {
 
     public int[] firstArray = createArrayOfDivisors(45);
-    public int[] secondArray = createSymmetricArray(7);
-    public int[] thirdArray = createSymmetricArray(8);
+    public double[] secondArray = createSymmetricArray(7);
+    public double[] thirdArray = createSymmetricArray(8);
 
     @Test
     public void testCreateArrayOfDivisors() {
@@ -24,10 +24,17 @@ public class SecondArrayTest {
 
     @Test
     public void testCreateSymmetricArray() {
-        int[] oneArray = new int[]{1, 2, 3, 4, 3, 2, 1};
+        double[] oneArray = new double[]{1., 2., 3., 4., 3., 2., 1.};
         assertTrue(Arrays.equals(secondArray, oneArray));
 
-        int[] twoArray = new int[]{1, 2, 3, 4, 4, 3, 2, 1};
+        double[] twoArray = new double[]{1., 2., 3., 4., 4., 3., 2., 1.};
         assertTrue(Arrays.equals(thirdArray, twoArray));
+    }
+
+    @Test
+    public void testCreateReverseArray() {
+        double[] array = {1.8, 2.4, 3.2};
+        createReverseArray(array);
+        assertTrue(Arrays.equals(array, new double[]{-1.8, -2.4, -3.2}));
     }
 }
