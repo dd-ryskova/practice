@@ -4,14 +4,14 @@ import static java.lang.Math.pow;
 
 public class SecondArray {
 
-    public static int[] createArrayOfDivisors(int x) {
+    public static double[] createArrayOfDivisors(int x) {
         int numberOfDivisors = 0;
         for (int i = 1; i <= Math.sqrt(x); i++) {
             if (x % i == 0) {
                 numberOfDivisors++;
             }
         }
-        int[] array = new int[numberOfDivisors];
+        double[] array = new double[numberOfDivisors];
         int j = 0;
         for (int i = 1; i <= Math.sqrt(x); ++i) {
             if (x % i == 0) {
@@ -58,5 +58,15 @@ public class SecondArray {
             }
         }
         return false;
+    }
+
+    public static int createCheckingEvenArray(double[] array) {
+        int count = 0;
+        for (int i = 0; i < array.length; ++i) {
+            if (array[i] % 2 == 0) {
+                count++;
+            }
+        }
+        return count;
     }
 }
