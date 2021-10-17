@@ -50,4 +50,13 @@ public class SecondArray {
         }
         return false;
     }
+
+    public static boolean createCheckingNullArray(Integer[] array) {
+        for (Integer x : array) {
+            if (x == null) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

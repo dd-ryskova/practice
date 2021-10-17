@@ -14,6 +14,9 @@ public class SecondArrayTest {
     public double[] secondArray = createSymmetricArray(7);
     public double[] thirdArray = createSymmetricArray(8);
 
+    Integer[] fourthArray = {1, 2, 3, null, 5, 6};
+    Integer[] fifthArray = {1, 2, 3, 4, 5, 6};
+
     @Test
     public void testCreateArrayOfDivisors() {
         assertEquals(firstArray.length, 3);
@@ -40,7 +43,13 @@ public class SecondArrayTest {
 
     @Test
     public void testCreateCheckingArray() {
-        assertEquals(createCheckingArray(secondArray, 2.), true);
-        assertEquals(createCheckingArray(secondArray, 5.), false);
+        assertTrue(createCheckingArray(secondArray, 2.));
+        assertFalse(createCheckingArray(secondArray, 5.));
+    }
+
+    @Test
+    public void testCreateCheckingNullArray() {
+        assertTrue(createCheckingNullArray(fourthArray));
+        assertFalse(createCheckingNullArray(fifthArray));
     }
 }
