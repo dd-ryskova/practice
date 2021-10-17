@@ -37,4 +37,10 @@ public class SecondArrayTest {
         createReverseArray(array);
         assertTrue(Arrays.equals(array, new double[]{-1.8, -2.4, -3.2}));
     }
+
+    @Test
+    public void testCreateCheckingArray() {
+        assertEquals(createCheckingArray(secondArray, 2.), true);
+        assertEquals(createCheckingArray(secondArray, 5.), false);
+    }
 }

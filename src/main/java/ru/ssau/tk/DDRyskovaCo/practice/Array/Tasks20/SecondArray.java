@@ -41,4 +41,13 @@ public class SecondArray {
             array[i] = array[i] * (-1);
         }
     }
+
+    public static boolean createCheckingArray(double[] array, double x) {
+        for (int i = 0; i < array.length; ++i) {
+            if (array[i] == x) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
