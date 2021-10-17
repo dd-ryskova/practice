@@ -58,4 +58,10 @@ public class SecondArrayTest {
         assertEquals(createCheckingEvenArray(firstArray), 0);
         assertEquals(createCheckingEvenArray(secondArray), 3);
     }
+
+    @Test
+    public void testCreateMaxArray() {
+        assertEquals(createMaxArray(firstArray),5.);
+        assertEquals(createMaxArray(secondArray), 4.);
+    }
 }
