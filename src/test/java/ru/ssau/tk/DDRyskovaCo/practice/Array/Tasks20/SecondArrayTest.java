@@ -12,7 +12,7 @@ public class SecondArrayTest {
 
     public int[] firstArray = createArrayOfDivisors(45);
     public int[] secondArray = createSymmetricArray(7);
-    private int[] thirdArray = createSymmetricArray(8);
+    public int[] thirdArray = createSymmetricArray(8);
 
     @Test
     public void testCreateArrayOfDivisors() {
