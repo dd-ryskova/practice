@@ -41,8 +41,8 @@ public class SecondArray {
     }
 
     public static boolean createCheckingArray(double[] array, double x) {
-        for (int i = 0; i < array.length; ++i) {
-            if (array[i] == x) {
+        for (double v : array) {
+            if (v == x) {
                 return true;
             }
         }
@@ -60,8 +60,8 @@ public class SecondArray {
 
     public static int createCheckingEvenArray(double[] array) {
         int count = 0;
-        for (int i = 0; i < array.length; ++i) {
-            if (array[i] % 2 == 0) {
+        for (double v : array) {
+            if (v % 2 == 0) {
                 count++;
             }
         }
@@ -70,9 +70,9 @@ public class SecondArray {
 
     public static double createMaxArray(double[] array) {
         double max = array[0];
-        for (int i = 0; i < array.length; ++i) {
-            if (max < array[i]) {
-                max = array[i];
+        for (double v : array) {
+            if (max < v) {
+                max = v;
             }
         }
         return max;
@@ -86,5 +86,19 @@ public class SecondArray {
             }
         }
         return sum;
+    }
+
+    public static boolean createCheckingDivisorsArray(double[] array) {
+        int divisibleByFirstElement = 0;
+        int divisibleByLastElement = 0;
+        for (double v : array) {
+            if (v % array[0] == 0) {
+                divisibleByFirstElement++;
+            }
+            if (v % array[array.length - 1] == 0) {
+                divisibleByLastElement++;
+            }
+        }
+        return divisibleByFirstElement > divisibleByLastElement;
     }
 }

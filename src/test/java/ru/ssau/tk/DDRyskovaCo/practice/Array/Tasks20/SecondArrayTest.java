@@ -17,6 +17,9 @@ public class SecondArrayTest {
     Integer[] fourthArray = {1, 2, 3, null, 5, 6};
     Integer[] fifthArray = {1, 2, 3, 4, 5, 6};
 
+    public double[] sixthArray = {1, 12, 14, 36, 6};
+    public double[] seventhArray = {15, 12, 14, 36, 6};
+
     @Test
     public void testCreateArrayOfDivisors() {
         assertEquals(firstArray.length, 3);
@@ -69,5 +72,11 @@ public class SecondArrayTest {
     public void testCreateSumArray() {
         assertEquals(createSumArray(firstArray), 6.);
         assertEquals(createSumArray(thirdArray), 10.);
+    }
+
+    @Test
+    public void testCreateCheckingDivisorsArray() {
+        assertTrue(createCheckingDivisorsArray(sixthArray));
+        assertFalse(createCheckingDivisorsArray(seventhArray));
     }
 }
