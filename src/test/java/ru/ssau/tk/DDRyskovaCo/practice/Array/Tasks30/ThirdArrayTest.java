@@ -15,4 +15,9 @@ public class ThirdArrayTest {
         assertEquals(createIndexOfArray(firstArray, 14.), 1);
     }
 
+    @Test
+    public void testCreateReverseMaxAndMinArray() {
+        createReverseMaxAndMinArray(firstArray);
+        assertEquals(firstArray, new double[]{57.2, 14., 34., 28.6, 12.});
+    }
 }
