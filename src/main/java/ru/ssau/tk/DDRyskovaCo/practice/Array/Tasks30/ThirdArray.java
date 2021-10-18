@@ -39,4 +39,12 @@ public class ThirdArray {
             array[i] = ~array[i];
         }
     }
+
+    public static int[] createBitwiseNegationArrayTwo(int[] array) {
+        int[] bitwiseNegationArray = new int[array.length];
+        for (int i = 0, j = 0; i < array.length; i++, j++) {
+            bitwiseNegationArray[j] = ~array[i];
+        }
+        return bitwiseNegationArray;
+    }
 }
