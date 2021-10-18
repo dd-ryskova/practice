@@ -33,4 +33,10 @@ public class ThirdArray {
         array[indexOfMax] = min;
         array[indexOfMin] = max;
     }
+
+    public static void createBitwiseNegationArray(int[] array) {
+        for (int i = 0; i < array.length; i++) {
+            array[i] = ~array[i];
+        }
+    }
 }
