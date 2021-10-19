@@ -64,4 +64,12 @@ public class ThirdArray {
         }
         return sumOfPairsArray;
     }
+
+    public static boolean[] createBooleanArray(int[] array) {
+        boolean[] booleanArray = new boolean[array.length];
+        for (int i = 0; i < array.length; i++) {
+            booleanArray[i] = array[i] % 2 == 0;
+        }
+        return booleanArray;
+    }
 }

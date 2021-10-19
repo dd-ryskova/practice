@@ -44,4 +44,10 @@ public class ThirdArrayTest {
         assertEquals(oneArray, new int[]{6, 13, 27});
         assertEquals(twoArray, new int[]{-7, -8, 0});
     }
+
+    @Test
+    public void testCreateBooleanArray() {
+        boolean[] oneArray = createBooleanArray(fourthArray);
+        assertEquals(oneArray, new boolean[]{true, true, true, false, true, false});
+    }
 }
