@@ -75,7 +75,7 @@ public class ThirdArray {
 
     public static double[] createFillingArray(int size, int index) {
         double[] array = new double[size];
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; ++i) {
             if (i + index >= size) {
                 array[i + index - size] = i + 1;
             } else {
@@ -83,6 +83,19 @@ public class ThirdArray {
             }
         }
         return array;
+    }
+
+    public static int[][] createTwoDimensionalArray(int size) {
+        int[][] twoDimensionalArray = new int[size][];
+        int k = 1;
+        for (int i = 0; i < size; ++i) {
+            twoDimensionalArray[i] = new int[size - i];
+            for (int j = 0; j < size - i; ++j) {
+                twoDimensionalArray[i][j] = k;
+                k++;
+            }
+        }
+        return twoDimensionalArray;
     }
 }
 

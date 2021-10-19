@@ -12,6 +12,7 @@ public class ThirdArrayTest {
     public int[] thirdArray = {0, 5, 10, 15};
     public int[] fourthArray = {2, 4, 6, 7, 12, 15};
     public int[] fifthArray = {-3, -4, -2, -6, 0};
+    public int[][] sixthArray = createTwoDimensionalArray(3);
 
     @Test
     public void testCreateIndexOfArray() {
@@ -54,5 +55,12 @@ public class ThirdArrayTest {
     @Test
     public void testCreateFillingArray() {
         assertEquals(createFillingArray(5, 3), new double[]{3, 4, 5, 1, 2});
+    }
+
+    @Test
+    public void testCreateTwoDimensionalArray() {
+        assertEquals(sixthArray[0], new int[]{1, 2, 3});
+        assertEquals(sixthArray[1], new int[]{4, 5});
+        assertEquals(sixthArray[2], new int[]{6});
     }
 }
