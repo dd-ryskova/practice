@@ -47,4 +47,21 @@ public class ThirdArray {
         }
         return bitwiseNegationArray;
     }
+
+    public static int[] createSumOfPairsArray(int[] array) {
+        int[] sumOfPairsArray;
+        if (array.length % 2 == 0) {
+            sumOfPairsArray = new int[array.length / 2];
+            for (int i = 0; i < sumOfPairsArray.length; ++i) {
+                sumOfPairsArray[i] = array[i * 2] + array[i * 2 + 1];
+            }
+        } else {
+            sumOfPairsArray = new int[array.length / 2 + 1];
+            for (int i = 0; i < sumOfPairsArray.length - 1; ++i) {
+                sumOfPairsArray[i] = array[i * 2] + array[i * 2 + 1];
+                sumOfPairsArray[array.length / 2] = array[array.length - 1];
+            }
+        }
+        return sumOfPairsArray;
+    }
 }

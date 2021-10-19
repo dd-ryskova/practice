@@ -10,6 +10,8 @@ public class ThirdArrayTest {
     public double[] firstArray = {12., 14., 34., 28.6, 57.2};
     public int[] secondArray = {1, 2, 3, 4, 5, 6};
     public int[] thirdArray = {0, 5, 10, 15};
+    public int[] fourthArray = {2, 4, 6, 7, 12, 15};
+    public int[] fifthArray = {-3, -4, -2, -6, 0};
 
     @Test
     public void testCreateIndexOfArray() {
@@ -32,5 +34,14 @@ public class ThirdArrayTest {
     @Test
     public void testCreateBitwiseNegationArrayTwo() {
         assertEquals(createBitwiseNegationArrayTwo(thirdArray), new int[]{-1, -6, -11, -16});
+    }
+
+    @Test
+    public void testCreateSumOfPairsArray() {
+        int[] oneArray = createSumOfPairsArray(fourthArray);
+        int[] twoArray = createSumOfPairsArray(fifthArray);
+
+        assertEquals(oneArray, new int[]{6, 13, 27});
+        assertEquals(twoArray, new int[]{-7, -8, 0});
     }
 }
