@@ -50,4 +50,9 @@ public class ThirdArrayTest {
         boolean[] oneArray = createBooleanArray(fourthArray);
         assertEquals(oneArray, new boolean[]{true, true, true, false, true, false});
     }
+
+    @Test
+    public void testCreateFillingArray() {
+        assertEquals(createFillingArray(5, 3), new double[]{3, 4, 5, 1, 2});
+    }
 }
