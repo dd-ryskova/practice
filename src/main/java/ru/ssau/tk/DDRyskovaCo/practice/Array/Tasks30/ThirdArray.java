@@ -2,6 +2,8 @@ package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30;
 
 import java.util.Arrays;
 
+import static java.lang.Double.*;
+
 public class ThirdArray {
 
     public static int createIndexOfArray(double[] array, double x) {
@@ -113,6 +115,16 @@ public class ThirdArray {
         for (String v : array) {
             System.out.print(v + " ");
         }
+    }
+
+    public static double createMultiplicationArray(double[] array) {
+        double multiplication = 1.;
+        for (double v : array) {
+            if (!Double.isNaN(v) && v != 0.0 && !Double.isInfinite(v)) {
+                multiplication *= v;
+            }
+        }
+        return multiplication;
     }
 }
 

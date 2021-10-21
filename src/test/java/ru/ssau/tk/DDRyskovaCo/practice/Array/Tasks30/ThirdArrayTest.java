@@ -2,10 +2,14 @@ package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30;
 
 import org.testng.annotations.Test;
 
+import static java.lang.Double.NaN;
+import static java.lang.Double.POSITIVE_INFINITY;
 import static org.testng.Assert.assertEquals;
 import static ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30.ThirdArray.*;
 
 public class ThirdArrayTest {
+
+    private static final double DELTA = 0.0001;
 
     public double[] firstArray = {12., 14., 34., 28.6, 57.2};
     public int[] secondArray = {1, 2, 3, 4, 5, 6};
@@ -13,8 +17,9 @@ public class ThirdArrayTest {
     public int[] fourthArray = {2, 4, 6, 7, 12, 15};
     public int[] fifthArray = {-3, -4, -2, -6, 0};
     public int[][] sixthArray = createTwoDimensionalArray(3);
-    public double[] seventhArray = {-1., 0.0, -2.2, 9., 7.7};
-    public double[] eightArray = new double[]{-1., 0.0, -2.2, 9., Double.NaN};
+    public double[] seventhArray = {-1., 0., -2.2, 9., 7.7};
+    public double[] eightArray = {-1., 0., -2.2, 9., NaN};
+    public double[] ninthArray = {1.1, -3., NaN, 2., 0., POSITIVE_INFINITY};
 
     @Test
     public void testCreateIndexOfArray() {
@@ -73,15 +78,20 @@ public class ThirdArrayTest {
 
         createWithoutNaNArray(eightArray);
         assertEquals(eightArray[0], -1.);
-        assertEquals(eightArray[1], 0.0);
+        assertEquals(eightArray[1], 0.);
         assertEquals(eightArray[2], -2.2);
         assertEquals(eightArray[3], 9.);
-        assertEquals(eightArray[4], Double.NaN);
+        assertEquals(eightArray[4], NaN);
     }
 
     @Test
     public void testCreateStringArray() {
         String[] array = new String[]{"This", "method", "works!"};
         createStringArray(array);
+    }
+
+    @Test
+    public void testCreateMultiplicationArray() {
+        assertEquals(createMultiplicationArray(ninthArray), -6.6, DELTA);
     }
 }
