@@ -108,6 +108,12 @@ public class ThirdArray {
         }
         Arrays.sort(array);
     }
+
+    public static void createStringArray(String[] array) {
+        for (String v : array) {
+            System.out.print(v + " ");
+        }
+    }
 }
 
 

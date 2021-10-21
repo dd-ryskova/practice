@@ -78,4 +78,10 @@ public class ThirdArrayTest {
         assertEquals(eightArray[3], 9.);
         assertEquals(eightArray[4], Double.NaN);
     }
+
+    @Test
+    public void testCreateStringArray() {
+        String[] array = new String[]{"This", "method", "works!"};
+        createStringArray(array);
+    }
 }
