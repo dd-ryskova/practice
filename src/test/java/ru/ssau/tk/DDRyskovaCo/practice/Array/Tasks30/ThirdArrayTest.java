@@ -13,6 +13,8 @@ public class ThirdArrayTest {
     public int[] fourthArray = {2, 4, 6, 7, 12, 15};
     public int[] fifthArray = {-3, -4, -2, -6, 0};
     public int[][] sixthArray = createTwoDimensionalArray(3);
+    public double[] seventhArray = {-1., 0.0, -2.2, 9., 7.7};
+    public double[] eightArray = new double[]{-1., 0.0, -2.2, 9., Double.NaN};
 
     @Test
     public void testCreateIndexOfArray() {
@@ -62,5 +64,18 @@ public class ThirdArrayTest {
         assertEquals(sixthArray[0], new int[]{1, 2, 3});
         assertEquals(sixthArray[1], new int[]{4, 5});
         assertEquals(sixthArray[2], new int[]{6});
+    }
+
+    @Test
+    public void testCreateWithoutNaNArray() {
+        createWithoutNaNArray(seventhArray);
+        assertEquals(seventhArray, new double[]{-2.2, -1., 0.0, 7.7, 9.});
+
+        createWithoutNaNArray(eightArray);
+        assertEquals(eightArray[0], -1.);
+        assertEquals(eightArray[1], 0.0);
+        assertEquals(eightArray[2], -2.2);
+        assertEquals(eightArray[3], 9.);
+        assertEquals(eightArray[4], Double.NaN);
     }
 }

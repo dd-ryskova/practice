@@ -1,5 +1,7 @@
 package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30;
 
+import java.util.Arrays;
+
 public class ThirdArray {
 
     public static int createIndexOfArray(double[] array, double x) {
@@ -97,5 +99,15 @@ public class ThirdArray {
         }
         return twoDimensionalArray;
     }
+
+    public static void createWithoutNaNArray(double[] array) {
+        for (double v : array) {
+            if (Double.isNaN(v)) {
+                return;
+            }
+        }
+        Arrays.sort(array);
+    }
 }
+
 
