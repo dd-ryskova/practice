@@ -3,6 +3,7 @@ package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30;
 import java.util.Arrays;
 
 import static java.lang.Double.*;
+import static java.util.Arrays.stream;
 
 public class ThirdArray {
 
@@ -115,6 +116,7 @@ public class ThirdArray {
         for (String v : array) {
             System.out.print(v + " ");
         }
+        System.out.println();
     }
 
     public static double createMultiplicationArray(double[] array) {
@@ -125,6 +127,15 @@ public class ThirdArray {
             }
         }
         return multiplication;
+    }
+
+    public static void createToHexStringFromArray(int[] array) {
+        Integer[] wrapperArray = new Integer[array.length];
+        for (int i = 0; i < array.length; ++i) {
+            wrapperArray[i] = array[i];
+        }
+        System.out.print("Array in hexadecimal system: ");
+        stream(wrapperArray).forEach(i -> System.out.print(Integer.toHexString(i) + " "));
     }
 }
 

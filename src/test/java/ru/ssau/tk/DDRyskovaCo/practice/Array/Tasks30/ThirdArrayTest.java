@@ -94,4 +94,9 @@ public class ThirdArrayTest {
     public void testCreateMultiplicationArray() {
         assertEquals(createMultiplicationArray(ninthArray), -6.6, DELTA);
     }
+
+    @Test
+    public void testCreateToHexStringFromArray() {
+        createToHexStringFromArray(thirdArray);
+    }
 }
