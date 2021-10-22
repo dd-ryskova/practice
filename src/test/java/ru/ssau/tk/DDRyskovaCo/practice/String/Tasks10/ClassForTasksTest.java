@@ -9,7 +9,7 @@ public class ClassForTasksTest {
 
     @Test
     public void testPrintChar() {
-        printChar("This method works!");
+        printChar("C");
     }
 
     @Test
@@ -39,5 +39,11 @@ public class ClassForTasksTest {
     @Test
     public void testStudyingScreening() {
         studyingScreening();
+    }
+
+    @Test
+    public void testIndexOfTheOccurrence() {
+        assertEquals(indexOfTheOccurrence("Class", "s"), 3);
+        assertEquals(indexOfTheOccurrence("Class", "b"), -1);
     }
 }

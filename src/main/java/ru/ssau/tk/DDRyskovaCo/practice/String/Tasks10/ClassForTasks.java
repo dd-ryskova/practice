@@ -52,4 +52,8 @@ public class ClassForTasks {
         System.out.println("Символ\"№" + ++i);   //добавляет "
         System.out.println("Символ\\№" + ++i);   //добавляет \, если же убрать один слэш, то компилятор выдаёт ошибку
     }
+
+    public static int indexOfTheOccurrence(String s1, String s2) {
+        return s1.indexOf(s2);
+    }
 }
