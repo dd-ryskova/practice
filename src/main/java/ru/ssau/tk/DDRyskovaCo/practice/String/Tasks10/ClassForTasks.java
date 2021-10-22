@@ -6,5 +6,14 @@ public class ClassForTasks {
         for (int i = 0; i < s.length(); ++i) {
             System.out.print(s.charAt(i) + " ");
         }
+        System.out.println();
+    }
+
+    public static void printBytes(String s) {
+        byte[] array = s.getBytes();
+        for (byte v : array) {
+            System.out.print(v + " ");
+        }
+        System.out.println();
     }
 }
