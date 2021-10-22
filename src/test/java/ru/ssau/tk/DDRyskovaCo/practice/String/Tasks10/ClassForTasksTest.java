@@ -46,4 +46,10 @@ public class ClassForTasksTest {
         assertEquals(indexOfTheOccurrence("Class", "s"), 3);
         assertEquals(indexOfTheOccurrence("Class", "b"), -1);
     }
+
+    @Test
+    public void testLastIndexOfTheOccurrenceHalf() {
+        assertEquals(lastIndexOfTheOccurrenceHalf("Levels", "e"), 1);
+        assertEquals(lastIndexOfTheOccurrenceHalf("Levels", "n"), -1);
+    }
 }
