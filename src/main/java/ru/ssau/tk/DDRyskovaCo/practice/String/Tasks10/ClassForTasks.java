@@ -16,4 +16,13 @@ public class ClassForTasks {
         }
         System.out.println();
     }
+
+    public static void stringComparison() {
+        String s1 = "First string!";
+        String s2 = new String(s1);
+        System.out.print("==: ");
+        System.out.print(s1 == s2);           //сравнивает ссылки на объект
+        System.out.print("  equals: ");
+        System.out.print(s1.equals(s2));      //сравнивает набор символов
+    }
 }

@@ -16,4 +16,9 @@ public class ClassForTasksTest {
     public void testPrintBytes() {
         printBytes("This method works!");
     }
+
+    @Test
+    public void testStringComparison() {
+        stringComparison();
+    }
 }
