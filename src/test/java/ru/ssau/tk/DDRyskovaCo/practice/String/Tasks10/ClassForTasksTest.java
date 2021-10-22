@@ -21,4 +21,18 @@ public class ClassForTasksTest {
     public void testStringComparison() {
         stringComparison();
     }
+
+    @Test
+    public void testPalindrome() {
+        assertTrue(palindrome("level"));
+        assertFalse(palindrome("levels"));
+    }
+
+    @Test
+    public void testStringComparisonIgnoreCase() {
+        assertTrue(stringComparisonIgnoreCase("string", "STRING"));
+        assertFalse(stringComparisonIgnoreCase("string", null));
+        assertFalse(stringComparisonIgnoreCase("string", "STRINGS"));
+        assertTrue(stringComparisonIgnoreCase("string", "StRiNg"));
+    }
 }
