@@ -35,4 +35,9 @@ public class ClassForTasksTest {
         assertFalse(stringComparisonIgnoreCase("string", "STRINGS"));
         assertTrue(stringComparisonIgnoreCase("string", "StRiNg"));
     }
+
+    @Test
+    public void testStudyingScreening() {
+        studyingScreening();
+    }
 }

@@ -23,7 +23,8 @@ public class ClassForTasks {
         System.out.print("==: ");
         System.out.print(s1 == s2);           //сравнивает ссылки на объект
         System.out.print("  equals: ");
-        System.out.print(s1.equals(s2));      //сравнивает набор символов
+        System.out.print(s1.equals(s2));//сравнивает набор символов
+        System.out.println();
     }
 
     public static boolean palindrome(String string) {
@@ -39,5 +40,16 @@ public class ClassForTasks {
         if (s1 == null || s2 == null) {
             return false;
         } else return !s2.equals(s1) & s2.equalsIgnoreCase(s1);
+    }
+
+    public static void studyingScreening() {
+        int i = 0;
+        System.out.println("Символ\t№" + ++i);   //табуляция
+        System.out.println("Символ\b№" + ++i);   //удаляет последний символ
+        System.out.println("Символ\n№" + ++i);   //переводит на новую строку
+        System.out.println("Символ\r№" + ++i);   //заменяет предыдущий текст на следующий
+        System.out.println("Символ\'№" + ++i);   //добавляет '
+        System.out.println("Символ\"№" + ++i);   //добавляет "
+        System.out.println("Символ\\№" + ++i);   //добавляет \, если же убрать один слэш, то компилятор выдаёт ошибку
     }
 }
