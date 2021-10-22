@@ -58,8 +58,12 @@ public class ClassForTasks {
         return s1.indexOf(s2);
     }
 
+    public static int firstIndexOfTheOccurrenceHalf(String s1, String s2) {
+        return s1.indexOf(s2, s1.length() / 2);
+    }
+
     public static int lastIndexOfTheOccurrenceHalf(String s1, String s2) {
-        String s3 = s1.substring(0,s1.length()/2);
+        String s3 = s1.substring(0, s1.length() / 2);
         return s3.lastIndexOf(s2);
     }
 }
