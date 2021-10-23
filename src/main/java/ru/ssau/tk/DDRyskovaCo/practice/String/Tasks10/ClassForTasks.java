@@ -23,7 +23,7 @@ public class ClassForTasks {
         System.out.print("==: ");
         System.out.print(s1 == s2);           //сравнивает ссылки на объект
         System.out.print("  equals: ");
-        System.out.print(s1.equals(s2));//сравнивает набор символов
+        System.out.print(s1.equals(s2));       //сравнивает набор символов
         System.out.println();
     }
 
@@ -65,5 +65,15 @@ public class ClassForTasks {
     public static int lastIndexOfTheOccurrenceHalf(String s1, String s2) {
         String s3 = s1.substring(0, s1.length() / 2);
         return s3.lastIndexOf(s2);
+    }
+
+    public static int countOfLines(String[] array, String prefix, String postfix) {
+        int count = 0;
+        for (String s : array) {
+            if (s.startsWith(prefix) && s.endsWith(postfix)) {
+                count++;
+            }
+        }
+        return count;
     }
 }

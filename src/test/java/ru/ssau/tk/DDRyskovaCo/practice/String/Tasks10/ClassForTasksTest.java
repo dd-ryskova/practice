@@ -9,7 +9,7 @@ public class ClassForTasksTest {
 
     @Test
     public void testPrintChar() {
-        printChar("C");
+        printChar("This method works!");
     }
 
     @Test
@@ -60,5 +60,12 @@ public class ClassForTasksTest {
         assertEquals(lastIndexOfTheOccurrenceHalf("Levels", "n"), -1);
         assertEquals(lastIndexOfTheOccurrenceHalf("Class", "Cl"), 0);
         assertEquals(lastIndexOfTheOccurrenceHalf("LevelsLevels", "ls"), 4);
+    }
+
+    @Test
+    public void testCountOfLines() {
+        assertEquals(countOfLines(new String[]{"This method works!"}, "This", "works!"), 1);
+        assertEquals(countOfLines(new String[]{"This method works!"}, "This", "method"), 0);
+        assertEquals(countOfLines(new String[]{"This method works!", "This method works again!", "This method again works!"}, "This", "works!"), 2);
     }
 }
