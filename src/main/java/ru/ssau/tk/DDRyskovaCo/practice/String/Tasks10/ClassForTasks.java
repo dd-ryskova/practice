@@ -76,4 +76,14 @@ public class ClassForTasks {
         }
         return count;
     }
+
+    public static int countOfLinesIgnoreTheSpace(String[] array, String prefix, String postfix) {
+        int count = 0;
+        for (String s : array) {
+            if (s.trim().startsWith(prefix) && s.trim().endsWith(postfix)) {
+                count++;
+            }
+        }
+        return count;
+    }
 }

@@ -68,4 +68,11 @@ public class ClassForTasksTest {
         assertEquals(countOfLines(new String[]{"This method works!"}, "This", "method"), 0);
         assertEquals(countOfLines(new String[]{"This method works!", "This method works again!", "This method again works!"}, "This", "works!"), 2);
     }
+
+    @Test
+    public void testCountOfLinesIgnoreTheSpace() {
+        assertEquals(countOfLinesIgnoreTheSpace(new String[]{" This method  works!  "}, "This", "works!"), 1);
+        assertEquals(countOfLinesIgnoreTheSpace(new String[]{"This method works!"}, "This", "method"), 0);
+        assertEquals(countOfLinesIgnoreTheSpace(new String[]{"  This  method works!  ", "  This method works again! ", "This method again   works! "}, "This", "works!"), 2);
+    }
 }
