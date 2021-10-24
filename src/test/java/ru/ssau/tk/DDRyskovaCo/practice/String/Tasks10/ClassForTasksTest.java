@@ -3,6 +3,7 @@ package ru.ssau.tk.DDRyskovaCo.practice.String.Tasks10;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
+import static org.testng.Assert.assertEquals;
 import static ru.ssau.tk.DDRyskovaCo.practice.String.Tasks10.ClassForTasks.*;
 
 public class ClassForTasksTest {
@@ -74,5 +75,11 @@ public class ClassForTasksTest {
         assertEquals(countOfLinesIgnoreTheSpace(new String[]{" This method  works!  "}, "This", "works!"), 1);
         assertEquals(countOfLinesIgnoreTheSpace(new String[]{"This method works!"}, "This", "method"), 0);
         assertEquals(countOfLinesIgnoreTheSpace(new String[]{"  This  method works!  ", "  This method works again! ", "This method again   works! "}, "This", "works!"), 2);
+    }
+
+    @Test
+    public void testReplacementTheString() {
+        assertEquals(replacementTheString("ороророро", "оро", "ро"), "роррро");
+        assertEquals(replacementTheString("This method works!", "This", "And this"), "And this method works!");
     }
 }

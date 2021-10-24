@@ -86,4 +86,12 @@ public class ClassForTasks {
         }
         return count;
     }
+
+    public static String replacementTheString(String s1, String s2, String s3) {
+        String s4 = s1;
+        for (int i = 0; s4.contains(s2) && i < 100; ++i) {
+            s4 = s4.replaceAll(s2, s3);
+        }
+        return s4;
+    }
 }
