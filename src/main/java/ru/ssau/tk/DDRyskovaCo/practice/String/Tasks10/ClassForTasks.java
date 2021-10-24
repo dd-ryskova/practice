@@ -94,4 +94,17 @@ public class ClassForTasks {
         }
         return s4;
     }
+
+    public static String substringOfString(String s1, int from, int to) {
+        if (from < 0) {
+            from = 0;
+        }
+        if (to > s1.length()) {
+            to = s1.length();
+        }
+        if (to <= from) {
+            return "";
+        }
+        return s1.substring(from, to);
+    }
 }

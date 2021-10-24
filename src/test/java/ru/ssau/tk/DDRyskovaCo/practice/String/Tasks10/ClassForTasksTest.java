@@ -82,4 +82,9 @@ public class ClassForTasksTest {
         assertEquals(replacementTheString("ороророро", "оро", "ро"), "роррро");
         assertEquals(replacementTheString("This method works!", "This", "And this"), "And this method works!");
     }
+
+    @Test
+    public void testSubstringOfString() {
+        assertEquals(substringOfString("This method works!", 5, 19), "method works!");
+    }
 }
