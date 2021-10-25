@@ -29,4 +29,12 @@ public class NamedPoint extends Point implements Resettable {
     public void reset() {
         this.name = "Absent";
     }
+
+    @Override
+    public String toString() {
+        if (this.name == null) {
+            return super.toString();
+        }
+        return this.name + " " + super.toString();
+    }
 }

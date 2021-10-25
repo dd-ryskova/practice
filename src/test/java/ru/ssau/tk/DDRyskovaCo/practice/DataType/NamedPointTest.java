@@ -38,4 +38,11 @@ public class NamedPointTest {
     void afterMethod() {
         System.out.println("NamedPointTest checked");
     }
+
+    @Test
+    public void testTestToString() {
+        System.out.println(firstPoint);
+        System.out.println(secondPoint);
+        System.out.println(thirdPoint);
+    }
 }
