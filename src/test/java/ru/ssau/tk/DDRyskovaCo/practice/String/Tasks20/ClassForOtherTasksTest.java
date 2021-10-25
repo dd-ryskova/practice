@@ -5,6 +5,9 @@ import ru.ssau.tk.DDRyskovaCo.practice.DataType.NamedPoint;
 import ru.ssau.tk.DDRyskovaCo.practice.DataType.Person;
 import ru.ssau.tk.DDRyskovaCo.practice.DataType.Point;
 
+import static java.nio.charset.StandardCharsets.UTF_8;
+import static java.nio.charset.StandardCharsets.UTF_16;
+
 import static org.testng.Assert.*;
 import static ru.ssau.tk.DDRyskovaCo.practice.String.Tasks20.ClassForOtherTasks.*;
 
@@ -63,5 +66,10 @@ public class ClassForOtherTasksTest {
 
     public static void main(String[] args) {
         System.out.println(java.nio.charset.Charset.defaultCharset());
+    }
+
+    @Test
+    public void testChangingTheEncoding() {
+        System.out.println(changingTheEncoding("This method works!", UTF_8, UTF_16));
     }
 }

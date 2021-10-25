@@ -1,5 +1,7 @@
 package ru.ssau.tk.DDRyskovaCo.practice.String.Tasks20;
 
+import java.nio.charset.Charset;
+
 import static java.lang.String.*;
 
 public class ClassForOtherTasks {
@@ -72,5 +74,9 @@ public class ClassForOtherTasks {
             stringBuilder.append(i).append(" ");
         }
         return stringBuilder.toString();
+    }
+
+    public static String changingTheEncoding(String s, Charset o1, Charset o2) {
+        return new String(s.getBytes(o1), o2);
     }
 }
