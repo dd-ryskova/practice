@@ -35,8 +35,14 @@ public class ClassForOtherTasksTest {
 
         Point firstPoint = new Point(12, -29, 52.3);
         System.out.println(descriptionOfObjects(firstPoint));
-        
+
         NamedPoint secondPoint = new NamedPoint(2, 2, 1, "O");
         System.out.println(descriptionOfObjects(secondPoint));
+    }
+
+    @Test
+    public void testSplittingTheString() {
+        String[] array = new String[]{"This", "Method", "Works!"};
+        assertEquals(splittingTheString("This method works!"), array);
     }
 }
