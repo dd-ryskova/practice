@@ -82,6 +82,11 @@ public class PersonTest {
         assertEquals(fourth.getGender(), Gender.MALE);
     }
 
+    @Test
+    public void testToString() {
+        Person first = new Person("Jane", "Austen", 234567);
+        System.out.println("First human: " + first);
+    }
 
     @AfterMethod
     void afterMethod() {

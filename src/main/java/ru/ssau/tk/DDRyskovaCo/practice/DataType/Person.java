@@ -72,7 +72,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return this.firstName + " " + this.lastName + " Passport: " + passportId + " ";
+        return this.firstName + " " + this.lastName;
     }
 }
 
