@@ -32,4 +32,8 @@ public class ClassForOtherTasks {
         }
         return s1.substring(from, to);
     }
+
+    public static String descriptionOfObjects(Object o) {
+        return "Описание объекта: " + o;
+    }
 }
