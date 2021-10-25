@@ -1,5 +1,7 @@
 package ru.ssau.tk.DDRyskovaCo.practice.String.Tasks20;
 
+import static java.lang.String.*;
+
 public class ClassForOtherTasks {
 
     public static int countOfLinesIgnoreTheSpace(String[] array, String prefix, String postfix) {
@@ -47,5 +49,9 @@ public class ClassForOtherTasks {
             }
         }
         return array;
+    }
+
+    public static String createOneString(String[] array) {
+        return join(", ", array);
     }
 }

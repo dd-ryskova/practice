@@ -42,7 +42,11 @@ public class ClassForOtherTasksTest {
 
     @Test
     public void testSplittingTheString() {
-        String[] array = new String[]{"This", "Method", "Works!"};
-        assertEquals(splittingTheString("This method works!"), array);
+        assertEquals(splittingTheString("This method works!"), new String[]{"This", "Method", "Works!"});
+    }
+
+    @Test
+    public void testCreateOneString() {
+        assertEquals(createOneString(new String[]{"This", "method", "works!"}), "This, method, works!");
     }
 }
