@@ -49,4 +49,9 @@ public class ClassForOtherTasksTest {
     public void testCreateOneString() {
         assertEquals(createOneString(new String[]{"This", "method", "works!"}), "This, method, works!");
     }
+
+    @Test
+    public void testCreateObject() {
+        assertEquals(createObject("This works!"), "01s8r6w4s2h0");
+    }
 }

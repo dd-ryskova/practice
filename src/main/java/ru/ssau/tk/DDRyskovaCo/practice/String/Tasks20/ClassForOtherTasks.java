@@ -54,4 +54,15 @@ public class ClassForOtherTasks {
     public static String createOneString(String[] array) {
         return join(", ", array);
     }
+
+    public static String createObject(String s) {
+        StringBuilder stringBuilder = new StringBuilder(s);
+        for (int i = 0; i < stringBuilder.length(); ++i) {
+            if (i % 2 == 0) {
+                stringBuilder.replace(i, i + 1, Integer.toString(i));
+            }
+        }
+        stringBuilder.reverse();
+        return stringBuilder.toString();
+    }
 }
