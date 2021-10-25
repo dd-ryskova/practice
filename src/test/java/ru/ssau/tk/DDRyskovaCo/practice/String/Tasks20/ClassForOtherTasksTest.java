@@ -54,4 +54,10 @@ public class ClassForOtherTasksTest {
     public void testCreateObject() {
         assertEquals(createObject("This works!"), "01s8r6w4s2h0");
     }
+
+    @Test
+    public void testFormTheString() {
+        System.out.println(formTheString(10));
+        System.out.println(formTheString(10000));
+    }
 }

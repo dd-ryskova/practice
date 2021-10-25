@@ -65,4 +65,12 @@ public class ClassForOtherTasks {
         stringBuilder.reverse();
         return stringBuilder.toString();
     }
+
+    public static String formTheString(int number) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < number; i++) {
+            stringBuilder.append(i).append(" ");
+        }
+        return stringBuilder.toString();
+    }
 }
