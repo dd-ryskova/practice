@@ -84,6 +84,12 @@ public class PointsTest {
         assertTrue(Points.equalsApproximately(Points.vectorProduct(new Point(0.0, 1.0, 2.0), new Point(-1.5, 2.5, -3.5)), new Point(-8.5, -3, 1.5)));
     }
 
+    @Test
+    public void testToString() {
+        Point firstPoint = new Point(12, -29, 52.3);
+        System.out.println(firstPoint);
+    }
+
     @AfterMethod
     void afterMethod() {
         System.out.println("PointsTest checked");
