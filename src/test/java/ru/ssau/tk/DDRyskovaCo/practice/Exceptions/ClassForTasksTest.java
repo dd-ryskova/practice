@@ -31,8 +31,20 @@ public class ClassForTasksTest {
     public void testCharactersByIndex() {
         assertEquals(charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 2, 3), 'ш');
 
+        assertThrows(NullPointerException.class, () -> charactersByIndex(null, 2, 3));
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 3, 3));
-        assertThrows(StringIndexOutOfBoundsException.class, () -> charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 1, 3));
         assertThrows(ArrayIndexOutOfBoundsException.class, () -> charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, -1, 4));
+        assertThrows(StringIndexOutOfBoundsException.class, () -> charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 1, 3));
+    }
+
+    @Test
+    public void testDividingFromStrings() {
+        assertEquals(dividingFromStrings("6", "2"), 3);
+        assertEquals(dividingFromStrings("5", "2"), 2);
+
+        assertThrows(NumberFormatException.class, () -> dividingFromStrings("6", null));
+        assertThrows(NumberFormatException.class, () -> dividingFromStrings(null, "2"));
+        assertThrows(NumberFormatException.class, () -> dividingFromStrings("six", "2"));
+        assertThrows(ArithmeticException.class, () -> dividingFromStrings("6", "0"));
     }
 }

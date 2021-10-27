@@ -19,4 +19,10 @@ public class ClassForTasks {
     public static char charactersByIndex(String[] array, int m, int n) {
         return array[m].charAt(n);
     }
+
+    public static int dividingFromStrings(String s1, String s2) {
+        int x = Integer.parseInt(s1);
+        int y = Integer.parseInt(s2);
+        return x / y;
+    }
 }
