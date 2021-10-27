@@ -22,8 +22,17 @@ public class ClassForTasksTest {
         assertEquals(arrayOfCharactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 2), new char[]{'л', 'д', 'у'});
 
         assertThrows(NullPointerException.class, () -> arrayOfCharactersByIndex(null, 2));
-        assertThrows(NullPointerException.class, () -> arrayOfCharactersByIndex(new String[]{null, "лёд", "uheif"}, 2));
+        assertThrows(NullPointerException.class, () -> arrayOfCharactersByIndex(new String[]{null, "лёд", "груша"}, 2));
         assertThrows(StringIndexOutOfBoundsException.class, () -> arrayOfCharactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 10));
         assertThrows(StringIndexOutOfBoundsException.class, () -> arrayOfCharactersByIndex(new String[]{"яблоко", "лёд", "груша"}, -1));
+    }
+
+    @Test
+    public void testCharactersByIndex() {
+        assertEquals(charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 2, 3), 'ш');
+
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 3, 3));
+        assertThrows(StringIndexOutOfBoundsException.class, () -> charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, 1, 3));
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> charactersByIndex(new String[]{"яблоко", "лёд", "груша"}, -1, 4));
     }
 }

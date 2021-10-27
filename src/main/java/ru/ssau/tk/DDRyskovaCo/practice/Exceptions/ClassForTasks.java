@@ -15,4 +15,8 @@ public class ClassForTasks {
         }
         return newArray;
     }
+
+    public static char charactersByIndex(String[] array, int m, int n) {
+        return array[m].charAt(n);
+    }
 }
