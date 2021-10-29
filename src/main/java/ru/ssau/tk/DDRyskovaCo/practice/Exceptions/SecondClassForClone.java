@@ -12,4 +12,9 @@ public class SecondClassForClone implements Cloneable {
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
+
+    @Override
+    public String toString() {
+        return " " + this.x;
+    }
 }
