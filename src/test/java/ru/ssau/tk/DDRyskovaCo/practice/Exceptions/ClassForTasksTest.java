@@ -3,6 +3,8 @@ package ru.ssau.tk.DDRyskovaCo.practice.Exceptions;
 import org.testng.annotations.Test;
 import ru.ssau.tk.DDRyskovaCo.practice.DataType.Person;
 
+import java.io.*;
+
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertThrows;
 import static ru.ssau.tk.DDRyskovaCo.practice.Exceptions.ClassForTasks.*;
@@ -46,5 +48,19 @@ public class ClassForTasksTest {
         assertThrows(NumberFormatException.class, () -> dividingFromStrings(null, "2"));
         assertThrows(NumberFormatException.class, () -> dividingFromStrings("six", "2"));
         assertThrows(ArithmeticException.class, () -> dividingFromStrings("6", "0"));
+    }
+
+    @Test
+    public void testSerialization() {
+        try {
+            Person human = new Person("Jane", "Austen", 234567);
+            serialization(new ByteArrayOutputStream(), human);
+            System.out.println(human);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        assertThrows(FileNotFoundException.class, () -> serialization(new FileOutputStream(""), new Person()));
+        assertThrows(NotSerializableException.class, () -> serialization(new ByteArrayOutputStream(), new Object()));
     }
 }

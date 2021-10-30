@@ -2,6 +2,8 @@ package ru.ssau.tk.DDRyskovaCo.practice.Exceptions;
 
 import ru.ssau.tk.DDRyskovaCo.practice.DataType.Person;
 
+import java.io.*;
+
 public class ClassForTasks {
 
     public static String dataOutput(Person human) {
@@ -24,5 +26,10 @@ public class ClassForTasks {
         int x = Integer.parseInt(s1);
         int y = Integer.parseInt(s2);
         return x / y;
+    }
+
+    public static void serialization(OutputStream os, Object o) throws IOException {
+        ObjectOutputStream out = new ObjectOutputStream(os);
+        out.writeObject(o);
     }
 }
