@@ -9,8 +9,8 @@ public class SecondClassForClone implements Cloneable {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public SecondClassForClone clone() throws CloneNotSupportedException {
+        return (SecondClassForClone) super.clone();
     }
 
     @Override

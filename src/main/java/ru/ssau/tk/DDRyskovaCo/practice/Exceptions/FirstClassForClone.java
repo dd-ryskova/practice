@@ -9,7 +9,7 @@ public class FirstClassForClone {
     }
 
     @Override
-    public Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    public FirstClassForClone clone() throws CloneNotSupportedException {
+        return (FirstClassForClone) super.clone();
     }
 }
