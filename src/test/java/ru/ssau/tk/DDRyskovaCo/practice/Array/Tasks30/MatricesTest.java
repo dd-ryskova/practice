@@ -7,8 +7,8 @@ import java.util.Objects;
 
 import static org.testng.Assert.assertEquals;
 
-import static ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30.Matrices.*;
-import static ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30.Matrices.multiplicationByNumber;
+import static ru.ssau.tk.DDRyskovaCo.practice.Array.Matrices.*;
+import static ru.ssau.tk.DDRyskovaCo.practice.Array.Matrices.multiplicationByNumber;
 
 public class MatricesTest {
 
