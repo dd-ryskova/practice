@@ -24,8 +24,8 @@ public class Matrix {
         return matrix[n][m];
     }
 
-    public void setAt(int n, int m, double values) {
-        matrix[n][m] = values;
+    public void setAt(int n, int m, double value) {
+        matrix[n][m] = value;
     }
 }
 
