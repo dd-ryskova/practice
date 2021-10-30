@@ -91,4 +91,15 @@ public class MatricesTest {
         assertEquals(multiplicationByNumber.getAt(2, 0), 6.0, DELTA);
         assertEquals(multiplicationByNumber.getAt(2, 1), 7.2, DELTA);
     }
+
+    @Test
+    public void testIncompatibleDimensionsException() {
+        Matrix firstMatrix = new Matrix(3, 2);
+        Matrix thirdMatrix = new Matrix(3, 3);
+        try {
+            multiplicationOfMatrices(firstMatrix, thirdMatrix);
+        } catch (IncompatibleDimensionsException e) {
+            e.printStackTrace();
+        }
+    }
 }

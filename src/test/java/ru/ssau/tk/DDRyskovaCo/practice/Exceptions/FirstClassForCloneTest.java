@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class FirstClassForCloneTest {
 
     @Test
-    public void testTestClone() {
+    public void testClone() {
         try {
             FirstClassForClone object = new FirstClassForClone(2);
             FirstClassForClone cloneObject = object.clone();

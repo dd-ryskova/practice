@@ -7,7 +7,7 @@ import static org.testng.Assert.*;
 public class SecondClassForCloneTest {
 
     @Test
-    public void testTestClone() {
+    public void testClone() {
         try {
             SecondClassForClone object = new SecondClassForClone(1);
             SecondClassForClone cloneObject = object.clone();
