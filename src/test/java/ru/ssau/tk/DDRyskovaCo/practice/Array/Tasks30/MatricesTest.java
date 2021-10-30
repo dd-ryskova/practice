@@ -2,13 +2,11 @@ package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks30;
 
 import org.testng.annotations.Test;
 import ru.ssau.tk.DDRyskovaCo.practice.Array.Matrix;
-
-import java.util.Objects;
+import ru.ssau.tk.DDRyskovaCo.practice.Exceptions.IncompatibleDimensionsException;
 
 import static org.testng.Assert.assertEquals;
-
+import static org.testng.Assert.assertThrows;
 import static ru.ssau.tk.DDRyskovaCo.practice.Array.Matrices.*;
-import static ru.ssau.tk.DDRyskovaCo.practice.Array.Matrices.multiplicationByNumber;
 
 public class MatricesTest {
 
@@ -18,6 +16,7 @@ public class MatricesTest {
     public void testSumOfMatrices() {
         Matrix firstMatrix = new Matrix(3, 2);
         Matrix secondMatrix = new Matrix(3, 2);
+        Matrix thirdMatrix = new Matrix(3, 3);
 
         for (int i = 0; i < firstMatrix.getN(); ++i) {
             for (int j = 0; j < firstMatrix.getM(); ++j) {
@@ -33,17 +32,20 @@ public class MatricesTest {
 
         Matrix sum = sumOfMatrices(firstMatrix, secondMatrix);
 
-        for (int i = 0; i < Objects.requireNonNull(sum).getN(); ++i) {
+        for (int i = 0; i < sum.getN(); ++i) {
             for (int j = 0; j < sum.getM(); ++j) {
                 assertEquals(sum.getAt(i, j), 3.0);
             }
         }
+
+        assertThrows(IncompatibleDimensionsException.class, () -> sumOfMatrices(firstMatrix, thirdMatrix));
     }
 
     @Test
     public void testMultiplicationOfMatrices() {
         Matrix firstMatrix = new Matrix(3, 2);
         Matrix secondMatrix = new Matrix(2, 3);
+        Matrix thirdMatrix = new Matrix(3, 3);
 
         for (int i = 0; i < firstMatrix.getN(); ++i) {
             for (int j = 0; j < firstMatrix.getM(); ++j) {
@@ -59,11 +61,13 @@ public class MatricesTest {
 
         Matrix multiplication = multiplicationOfMatrices(firstMatrix, secondMatrix);
 
-        for (int i = 0; i < (multiplication != null ? multiplication.getN() : 0); ++i) {
+        for (int i = 0; i < multiplication.getN(); ++i) {
             for (int j = 0; j < multiplication.getM(); ++j) {
                 assertEquals(multiplication.getAt(i, j), 4.0, DELTA);
             }
         }
+
+        assertThrows(IncompatibleDimensionsException.class, () -> multiplicationOfMatrices(firstMatrix, thirdMatrix));
     }
 
     @Test
