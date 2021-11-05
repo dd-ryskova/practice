@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class Person implements Serializable {
 
+    private static final long serialVersionUID = 5218025673889443483L;
+
     private String firstName;
     private String lastName;
     private int passportId;
