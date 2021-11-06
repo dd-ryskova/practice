@@ -2,13 +2,14 @@ package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks20;
 
 import org.testng.annotations.Test;
 
-import java.util.Arrays;
+import java.util.*;
 
 import static org.testng.Assert.*;
 import static ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks20.SecondArray.*;
 
-
 public class SecondArrayTest {
+
+    private final double DELTA = 0.0001;
 
     public double[] firstArray = createArrayOfDivisors(45);
     public double[] secondArray = createSymmetricArray(7);
@@ -58,25 +59,39 @@ public class SecondArrayTest {
 
     @Test
     public void testCreateCheckingEvenArray() {
-        assertEquals(createCheckingEvenArray(firstArray), 0);
-        assertEquals(createCheckingEvenArray(secondArray), 3);
+        assertEquals(createCheckingEvenArray(firstArray), 0, DELTA);
+        assertEquals(createCheckingEvenArray(secondArray), 3, DELTA);
     }
 
     @Test
     public void testCreateMaxArray() {
-        assertEquals(createMaxArray(firstArray), 5.);
-        assertEquals(createMaxArray(secondArray), 4.);
+        assertEquals(createMaxArray(firstArray), 5., DELTA);
+        assertEquals(createMaxArray(secondArray), 4., DELTA);
     }
 
     @Test
     public void testCreateSumArray() {
-        assertEquals(createSumArray(firstArray), 6.);
-        assertEquals(createSumArray(thirdArray), 10.);
+        assertEquals(createSumArray(firstArray), 6., DELTA);
+        assertEquals(createSumArray(thirdArray), 10., DELTA);
     }
 
     @Test
     public void testCreateCheckingDivisorsArray() {
         assertTrue(createCheckingDivisorsArray(sixthArray));
         assertFalse(createCheckingDivisorsArray(seventhArray));
+    }
+
+    @Test
+    public void testCreateSimpleArray() {
+        ArrayList<Integer> primeArray = createPrimeArray(21);
+        assertEquals(primeArray.size(), 8);
+        assertEquals(primeArray.get(0), 2.0, DELTA);
+        assertEquals(primeArray.get(1), 3.0, DELTA);
+        assertEquals(primeArray.get(2), 5.0, DELTA);
+        assertEquals(primeArray.get(3), 7.0, DELTA);
+        assertEquals(primeArray.get(4), 11.0, DELTA);
+        assertEquals(primeArray.get(5), 13.0, DELTA);
+        assertEquals(primeArray.get(6), 17.0, DELTA);
+        assertEquals(primeArray.get(7), 19.0, DELTA);
     }
 }

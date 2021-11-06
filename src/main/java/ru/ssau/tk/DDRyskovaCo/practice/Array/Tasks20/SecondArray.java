@@ -1,5 +1,7 @@
 package ru.ssau.tk.DDRyskovaCo.practice.Array.Tasks20;
 
+import java.util.ArrayList;
+
 public class SecondArray {
 
     public static double[] createArrayOfDivisors(int x) {
@@ -101,4 +103,21 @@ public class SecondArray {
         }
         return divisibleByFirstElement > divisibleByLastElement;
     }
+
+    public static ArrayList<Integer> createPrimeArray(int number) {
+        ArrayList<Integer> primeArray = new ArrayList<>();
+        for (int i = 2; i <= number; ++i) {
+            int k = 0;
+            for (int j = 2; j < number; ++j) {
+                if (i % j == 0) {
+                    k++;
+                }
+            }
+            if (k == 1) {
+                primeArray.add(i);
+            }
+        }
+        return primeArray;
+    }
 }
+
