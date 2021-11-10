@@ -11,10 +11,10 @@ public class HelloKitty {
         try {
             Scanner in = new Scanner(System.in);
             var change = in.nextInt();
-            System.out.println(" Введите число от 1 до 3 с: ");
+            System.out.println(" Введите число от 1 до 5 с: ");
             System.out.print(" Тип вашей переменной: ");
             printType(change);
-            if (change < 1 || change > 3) {
+            if (change < 1 || change > 5) {
                 System.out.println(" Вы ввели не то и обидели котика(");
             } else {
                 System.out.println(" Вы ввели: " + change + "\n Ваша картинка готова!)");
@@ -62,11 +62,30 @@ public class HelloKitty {
                                 "…………………ℒℴѵℯℒℴѵℯ\n" +
                                 "………………………ℒℴѵℯ");
                         break;
+                    case 4:
+                        System.out.println("　　　　　　　   　 　　　　　　／ ¯¯｀フ\n" +
+                                "　　　　　　　　　,　'' ｀ ｀ / 　 　 　 !　 　\n" +
+                                "　　　　　　　 , ' 　　　　 レ　 _,　 -' ミ\n" +
+                                "　　　　　　　 ; 　 　 　 　 　`ミ __,xノﾞ､\n" +
+                                "　　　 　　 　 i　 　　　ﾐ　　　; ,､､､、　ヽ ¸\n" +
+                                "　　　 　　,.-‐! 　 　 　 ﾐ　　i　　　　｀ヽ.._,,))\n" +
+                                "　　 　　//´｀｀､　　　　 ミ　ヽ　　　　　(¯`v´¯)\n" +
+                                "　　　　| l　　 　｀ ｰｰ -‐''ゝ､,,)).　 　　 　 ..`·.¸.·´\n" +
+                                "　　　 　ヽ.ー─'´)");
+                        break;
+                    case 5:
+                        System.out.println("／ﾌﾌ 　　　　　 　　 　ム｀ヽ\n" +
+                                "/ ノ)　　 ∧　　∧　　　　）　ヽ\n" +
+                                "/ ｜　　(´・ω ・`）ノ⌒（ゝ._,ノ\n" +
+                                "/　ﾉ⌒＿⌒ゝーく　 ＼　　／\n" +
+                                "丶＿ ノ 　　 ノ､　　|　/\n" +
+                                "　　 `ヽ `ー-‘人`ーﾉ /\n" +
+                                "　　　 丶 ￣ _人’彡ﾉ\n" +
+                                "　　　／｀ヽ _/\\__' ");
+                        break;
                 }
             }
-        }
-        catch (InputMismatchException e)
-        {
+        } catch (InputMismatchException e) {
             System.out.println(" Вы ввели не число и обидели котика(");
         }
     }
