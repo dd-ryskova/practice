@@ -9,9 +9,9 @@ public class HelloKitty {
     public static void main(String[] args) {
 
         try {
+            System.out.println(" Введите число от 1 до 5 с: ");
             Scanner in = new Scanner(System.in);
             var change = in.nextInt();
-            System.out.println(" Введите число от 1 до 5 с: ");
             System.out.print(" Тип вашей переменной: ");
             printType(change);
             if (change < 1 || change > 5) {
