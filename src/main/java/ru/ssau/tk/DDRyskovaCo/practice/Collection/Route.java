@@ -2,7 +2,7 @@ package ru.ssau.tk.DDRyskovaCo.practice.Collection;
 
 import java.util.*;
 
-public class Route {
+public class Route implements Iterable<Location> {
 
     private final List<Location> locations = new ArrayList<>();
 
@@ -20,5 +20,10 @@ public class Route {
 
     public void removeLocation(int index) {
         this.locations.remove(index);
+    }
+
+    @Override
+    public Iterator<Location> iterator() {
+        return locations.iterator();
     }
 }
