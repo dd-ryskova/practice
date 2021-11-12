@@ -1,4 +1,4 @@
-package ru.ssau.tk.DDRyskovaCo.practice;
+package ru.ssau.tk.DDRyskovaCo.practice.My;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

@@ -60,4 +60,25 @@ public class RouteTest {
         route.removeLocation(0);
         assertEquals(route.getLocations(), locations);
     }
+
+    @Test
+    public void testIterator() {
+        Route route = new Route();
+        int count = 0;
+
+        route.addLocation(firstLocation);
+        route.addLocation(secondLocation);
+
+        firstLocation.setId(0);
+        secondLocation.setId(1);
+
+        for (Location locations : route) {
+            assertEquals(locations.getId(), count++);
+        }
+
+        assertEquals(count, 2);
+
+        assertEquals(route.getFirstLocation(), firstLocation);
+        assertEquals(route.getLastLocation(), secondLocation);
+    }
 }
