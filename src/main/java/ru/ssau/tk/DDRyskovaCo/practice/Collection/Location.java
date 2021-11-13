@@ -14,7 +14,8 @@ public class Location {
         VILLAGE
     }
 
-    public enum WaypointType { DEPOT,
+    public enum WaypointType {
+        DEPOT,
         WAREHOUSE,
         EMPTY
     }
