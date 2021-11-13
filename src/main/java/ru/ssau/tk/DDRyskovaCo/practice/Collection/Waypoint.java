@@ -5,12 +5,6 @@ public class Waypoint extends Location {
     private WaypointType type;
     private Settlement settlement;
 
-    public enum WaypointType {
-        DEPOT,
-        WAREHOUSE,
-        EMPTY
-    }
-
     public WaypointType getType() {
         return type;
     }

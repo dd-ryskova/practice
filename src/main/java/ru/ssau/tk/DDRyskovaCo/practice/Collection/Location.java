@@ -14,6 +14,11 @@ public class Location {
         VILLAGE
     }
 
+    public enum WaypointType { DEPOT,
+        WAREHOUSE,
+        EMPTY
+    }
+
     public int getId() {
         return id;
     }
