@@ -34,4 +34,16 @@ public class Route implements Iterable<Location> {
     public Iterator<Location> iterator() {
         return locations.iterator();
     }
+
+    public void remove(Location location) {
+        int count = 0;
+
+        for (Location currentLocation : this.locations) {
+            if (currentLocation.equals(location)) {
+                removeLocation(count);
+                return;
+            }
+            count++;
+        }
+    }
 }
