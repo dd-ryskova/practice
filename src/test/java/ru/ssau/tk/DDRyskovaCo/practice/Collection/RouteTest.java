@@ -101,4 +101,24 @@ public class RouteTest {
 
         assertEquals(route.getLocations(), locations);
     }
+
+    @Test
+    public void testTestEquals() {
+        Route firstRoute = new Route();
+        Route secondRoute = new Route();
+
+        firstRoute.addLocation(firstLocation);
+        firstRoute.addLocation(secondLocation);
+        firstRoute.addLocation(thirdLocation);
+
+        secondRoute.addLocation(firstLocation);
+        secondRoute.addLocation(secondLocation);
+        secondRoute.addLocation(thirdLocation);
+
+        assertEquals(secondRoute, firstRoute);
+
+        firstRoute.removeLocation(0);
+
+        assertNotEquals(secondRoute, firstRoute);
+    }
 }

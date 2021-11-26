@@ -2,7 +2,7 @@ package ru.ssau.tk.DDRyskovaCo.practice.Collection;
 
 import java.util.*;
 
-public class Route implements Iterable<Location> {
+public final class Route implements Iterable<Location> {
 
     private final List<Location> locations = new ArrayList<>();
 
@@ -45,5 +45,22 @@ public class Route implements Iterable<Location> {
             }
             count++;
         }
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) {
+            return true;
+        } else if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
+
+        Route route = (Route) object;
+        return Objects.equals(locations, route.locations);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(locations);
     }
 }
