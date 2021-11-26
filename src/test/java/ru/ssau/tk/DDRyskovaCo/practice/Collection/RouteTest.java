@@ -8,8 +8,9 @@ import static org.testng.Assert.*;
 
 public class RouteTest {
 
-    Location firstLocation = new Location();
-    Location secondLocation = new Location();
+    public Location firstLocation = new Location();
+    public Location secondLocation = new Location();
+    public Location thirdLocation = new Location();
 
     @Test
     public void testAddLocation() {
@@ -80,5 +81,24 @@ public class RouteTest {
 
         assertEquals(route.getFirstLocation(), firstLocation);
         assertEquals(route.getLastLocation(), secondLocation);
+    }
+
+    @Test
+    public void testRemove() {
+        List<Location> locations = new ArrayList<>();
+        Route route = new Route();
+
+        locations.add(firstLocation);
+        locations.add(secondLocation);
+        locations.add(thirdLocation);
+
+        route.addLocationByIndex(0, firstLocation);
+        route.addLocationByIndex(1, secondLocation);
+        route.addLocationByIndex(2, thirdLocation);
+
+        route.remove(thirdLocation);
+        locations.remove(thirdLocation);
+
+        assertEquals(route.getLocations(), locations);
     }
 }
