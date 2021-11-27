@@ -20,4 +20,9 @@ public class Waypoint extends Location {
     public void setSettlement(Settlement settlement) {
         this.settlement = settlement;
     }
+
+    @Override
+    public String toString() {
+        return "Тип поселения: " + getType() + "\nНазвание: " + getName() + "\nШирота: " + getLatitude() + "\nДолгота: " + getLongitude() + '\n';
+    }
 }

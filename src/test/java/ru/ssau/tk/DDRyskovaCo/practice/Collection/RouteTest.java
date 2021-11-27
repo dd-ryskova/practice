@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import java.util.*;
 
 import static org.testng.Assert.*;
+import static ru.ssau.tk.DDRyskovaCo.practice.Collection.Location.SettlementType.*;
+import static ru.ssau.tk.DDRyskovaCo.practice.Collection.Location.WaypointType.*;
 
 public class RouteTest {
 
@@ -120,5 +122,28 @@ public class RouteTest {
         firstRoute.removeLocation(0);
 
         assertNotEquals(secondRoute, firstRoute);
+    }
+
+    @Test
+    public void testTestToString() {
+        Route route = new Route();
+
+        Settlement city = new Settlement();
+        city.setType(CITY);
+        city.setName("Samara");
+        city.setId(123);
+        city.setLatitude(45);
+        city.setLongitude(90);
+        route.addLocation(city);
+
+        Waypoint depot = new Waypoint();
+        depot.setType(DEPOT);
+        depot.setName("depot");
+        depot.setId(456);
+        depot.setLatitude(135);
+        depot.setLongitude(180);
+        route.addLocation(depot);
+
+        System.out.println(route);
     }
 }
