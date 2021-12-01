@@ -2,10 +2,7 @@ package ru.ssau.tk.DDRyskovaCo.practice.Collection;
 
 import ru.ssau.tk.DDRyskovaCo.practice.DataType.Gender;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 public class CompanyModel {
 
@@ -13,12 +10,19 @@ public class CompanyModel {
     Collection<Route> allRoutes;
     Collection<Driver> allDrivers;
     private int maxId = 0;
+    Map<Driver, Route> driverRouteMap;
 
     public CompanyModel() {
         allLocations = new LinkedHashSet<>();
         allRoutes = new LinkedHashSet<>();
         allDrivers = new LinkedHashSet<>();
+        driverRouteMap = new LinkedHashMap<>();
     }
+
+    public Map<Driver, Route> getDriverRouteMap() {
+        return driverRouteMap;
+    }
+
 
     public Collection<Location> getAllLocations() {
         return allLocations;
@@ -77,5 +81,9 @@ public class CompanyModel {
         allRoutes.add(route);
 
         return route;
+    }
+
+    public void assignRoute(Driver driver, Route route) {
+        driverRouteMap.put(driver, route);
     }
 }

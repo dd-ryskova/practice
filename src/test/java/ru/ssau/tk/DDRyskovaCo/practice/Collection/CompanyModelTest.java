@@ -6,7 +6,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.LinkedHashSet;
 
-import static org.testng.AssertJUnit.assertEquals;
+import static org.testng.Assert.*;
 import static ru.ssau.tk.DDRyskovaCo.practice.DataType.Gender.MALE;
 
 public class CompanyModelTest {
@@ -24,6 +24,8 @@ public class CompanyModelTest {
 
     Driver firstDriver = new Driver();
     Driver secondDriver = new Driver();
+
+    CompanyModel companyModel = new CompanyModel();
 
     @Test
     public void testGetAllLocations() {
@@ -89,5 +91,14 @@ public class CompanyModelTest {
         allDrivers.add(secondDriver);
 
         assertEquals(allDrivers.size(), 2);
+    }
+
+    @Test
+    public void testAssignRoute() {
+        companyModel.assignRoute(firstDriver, firstRoute);
+        assertEquals(companyModel.getDriverRouteMap().get(firstDriver), firstRoute);
+
+        companyModel.assignRoute(secondDriver, secondRoute);
+        assertEquals(companyModel.getDriverRouteMap().get(firstDriver), secondRoute);
     }
 }
