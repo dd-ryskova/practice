@@ -146,4 +146,23 @@ public class RouteTest {
 
         System.out.println(route);
     }
+
+    @Test
+    public void testLength() {
+        Route route = new Route();
+
+        Settlement village = new Settlement();
+        Settlement city = new Settlement();
+
+        village.setLatitude(4.);
+        city.setLatitude(8.);
+
+        village.setLongitude(3.);
+        city.setLongitude(6.);
+
+        route.addLocation(city);
+        route.addLocation(village);
+
+        assertEquals(route.length(), 5, 0.0001);
+    }
 }
