@@ -2,7 +2,7 @@ package ru.ssau.tk.DDRyskovaCo.practice.Collection;
 
 import java.util.*;
 
-public final class Route implements Iterable<Location> {
+public final class Route implements Iterable<Location>, Comparable<Route> {
 
     private final List<Location> locations = new ArrayList<>();
 
@@ -84,5 +84,10 @@ public final class Route implements Iterable<Location> {
             stringBuilder.append('\n');
         }
         return String.valueOf(stringBuilder);
+    }
+
+    @Override
+    public int compareTo(Route anotherRoute) {
+        return Double.compare(this.length(), anotherRoute.length());
     }
 }

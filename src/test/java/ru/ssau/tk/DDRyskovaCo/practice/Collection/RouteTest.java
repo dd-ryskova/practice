@@ -160,9 +160,52 @@ public class RouteTest {
         village.setLongitude(3.);
         city.setLongitude(6.);
 
-        route.addLocation(city);
         route.addLocation(village);
+        route.addLocation(city);
 
         assertEquals(route.length(), 5, 0.0001);
+    }
+
+    @Test
+    public void testCompareTo() {
+
+        Route firstRoute = new Route();
+        Route secondRoute = new Route();
+        Route thirdRoute = new Route();
+
+        Waypoint firstDepot = new Waypoint();
+        Waypoint firstWarehouse = new Waypoint();
+
+        Settlement firstVillage = new Settlement();
+        Settlement firstCity = new Settlement();
+
+        firstVillage.setLatitude(4.);
+        firstCity.setLatitude(8.);
+        firstDepot.setLatitude(100.);
+        firstWarehouse.setLatitude(120.);
+
+        firstVillage.setLongitude(3.);
+        firstCity.setLongitude(6.);
+        firstDepot.setLongitude(8.);
+        firstWarehouse.setLongitude(5.);
+
+        firstRoute.addLocation(firstVillage);
+        firstRoute.addLocation(firstCity);
+
+        secondRoute.addLocation(firstDepot);
+        secondRoute.addLocation(firstWarehouse);
+
+        thirdRoute.addLocation(firstVillage);
+        thirdRoute.addLocation(firstCity);
+        thirdRoute.addLocation(firstDepot);
+        thirdRoute.addLocation(firstWarehouse);
+
+        assertEquals(firstRoute.length(), 5, 0.0001);
+        assertEquals(secondRoute.length(), 20.22374, 0.0001);
+        assertEquals(thirdRoute.length(), 117.24548, 0.0001);
+
+        List<Route> routes = new ArrayList<>(Arrays.asList(thirdRoute, secondRoute, firstRoute));
+        Collections.sort(routes);
+        assertEquals(routes, new ArrayList<>(Arrays.asList(firstRoute, secondRoute, thirdRoute)));
     }
 }
