@@ -205,7 +205,11 @@ public class RouteTest {
         assertEquals(thirdRoute.length(), 117.24548, 0.0001);
 
         List<Route> routes = new ArrayList<>(Arrays.asList(thirdRoute, secondRoute, firstRoute));
+        assertEquals(routes, new ArrayList<>(Arrays.asList(thirdRoute, secondRoute, firstRoute)));
+
         Collections.sort(routes);
         assertEquals(routes, new ArrayList<>(Arrays.asList(firstRoute, secondRoute, thirdRoute)));
+        assertEquals(Collections.min(routes), firstRoute);
+        assertEquals(Collections.max(routes), thirdRoute);
     }
 }

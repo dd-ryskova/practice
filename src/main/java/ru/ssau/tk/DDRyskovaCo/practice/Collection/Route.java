@@ -5,6 +5,7 @@ import java.util.*;
 public final class Route implements Iterable<Location>, Comparable<Route> {
 
     private final List<Location> locations = new ArrayList<>();
+    private final RouteLengthComparator routeLengthComparator = new RouteLengthComparator();
 
     public List<Location> getLocations() {
         return locations;
@@ -87,7 +88,7 @@ public final class Route implements Iterable<Location>, Comparable<Route> {
     }
 
     @Override
-    public int compareTo(Route anotherRoute) {
-        return Double.compare(this.length(), anotherRoute.length());
+    public int compareTo(Route route) {
+        return routeLengthComparator.compare(this, route);
     }
 }
