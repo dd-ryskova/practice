@@ -2,12 +2,10 @@ package ru.ssau.tk.DDRyskovaCo.practice.Collection;
 
 import org.testng.annotations.Test;
 
-import java.util.Collection;
-import java.util.Date;
-import java.util.LinkedHashSet;
+import java.util.*;
 
-import static org.testng.Assert.*;
-import static ru.ssau.tk.DDRyskovaCo.practice.DataType.Gender.MALE;
+import static org.testng.Assert.assertEquals;
+import static ru.ssau.tk.DDRyskovaCo.practice.DataType.Gender.*;
 
 public class CompanyModelTest {
 
@@ -18,6 +16,10 @@ public class CompanyModelTest {
     Location firstLocation = new Location();
     Location secondLocation = new Location();
     Location thirdLocation = new Location();
+
+    Settlement firstSettlement = new Settlement();
+    Settlement secondSettlement = new Settlement();
+    Settlement thirdSettlement = new Settlement();
 
     Route firstRoute = new Route();
     Route secondRoute = new Route();
@@ -101,5 +103,23 @@ public class CompanyModelTest {
 
         companyModel.assignRoute(secondDriver, secondRoute);
         assertEquals(companyModel.getDriverRouteMap().get(firstDriver), secondRoute);
+    }
+
+    @Test
+    public void testSort() {
+
+        firstSettlement.setId(100);
+        secondSettlement.setId(50);
+        thirdSettlement.setId(75);
+
+        firstSettlement.setLatitude(320);
+        secondSettlement.setLatitude(250);
+        thirdSettlement.setLatitude(100);
+
+        List<Settlement> settlements = new ArrayList<>(Arrays.asList(firstSettlement, secondSettlement, thirdSettlement));
+        CompanyModel.sort(settlements, Comparator.comparingInt(Location::getId));
+
+        CompanyModel.sort(settlements, new EquatorComparator());
+        assertEquals(settlements, new ArrayList<>(Arrays.asList(thirdSettlement, secondSettlement, firstSettlement)));
     }
 }
